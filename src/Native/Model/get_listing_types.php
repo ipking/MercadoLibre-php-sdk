@@ -1,19 +1,26 @@
 <?php
 
-use MercadoLibre\Native\Model\SiteEnum;
 
-include 'SiteEnum.php';
-
-$list = [];
-foreach(SiteEnum::$NAME_MAP as $site=>$name){
-	try{
-		$datas = json_decode(file_get_contents('https://api.mercadolibre.com/sites/'.$site.'/listing_types'),1);
-		
-		foreach($datas as $item){
-			$list[$site][] = $item['id'];
-		}
-	}catch(Exception $e){
-		//do noting
-	}
-	
+$re = json_decode(file_get_contents('https://api.mercadolibre.com/sites/MLA/listing_types'),1);
+$const = '';
+$static = '';
+foreach($re as $item){
+	$const .= "\tconst TYPE_".strtoupper($item['id'])." = '".$item['id']."';".PHP_EOL;
+	$static .= "\t\tself::TYPE_".strtoupper($item['id'])."  => '".$item['id']."',".PHP_EOL;
 }
+$NAME_MAP = '$NAME_MAP';
+
+$data = <<<EOL
+<?php
+
+namespace MercadoLibre\Native\Model;
+
+class ListingTypesEnum{
+$const
+	public static $NAME_MAP = array(
+$static
+	);
+}
+EOL;
+
+file_put_contents('ListingTypesEnum.php',$data);
