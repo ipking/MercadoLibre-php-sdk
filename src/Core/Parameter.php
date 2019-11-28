@@ -98,7 +98,7 @@ class Parameter extends DataProto{
 				}
 				break;
 			case self::PARAM_TYPE_BOOL:
-				if($value !== true or $value !== false){
+				if($value !== true and $value !== false){
 					throw new ParamValidateException('parameter ['.$field.'] type error, <bool> required, <'.gettype($value).'> given');
 				}
 				break;

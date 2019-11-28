@@ -9,5 +9,9 @@ class NativeErrorMsg {
 	
 	public static function getMsg($errors){
 		$msg = '';
+		foreach($errors as $error){
+			$msg.= '['.$error['message'].']';
+		}
+		return $msg;
 	}
 }

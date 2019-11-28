@@ -6,6 +6,7 @@
 namespace MercadoLibre\Native\ItemCreate;
 
 use MercadoLibre\Native\ItemCreate\Model\ConditionEnum;
+use MercadoLibre\Native\ItemCreate\Model\PicturesParameter;
 use MercadoLibre\Native\Model\CurrencyEnum;
 use MercadoLibre\Native\NativeParameter;
 
@@ -38,7 +39,7 @@ class ItemCreateParameter extends NativeParameter
 			'price'               => [self::PARAM_TYPE_NUMBER, self::PARAM_REQUIRED],
 			'buying_mode'         => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
 			'category_id'         => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'pictures'            => [self::PARAM_TYPE_ARRAY, self::PARAM_REQUIRED],
+			'pictures'            => [self::PARAM_TYPE_ARRAY, self::PARAM_REQUIRED,PicturesParameter::class],
 			'warranty'            => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}

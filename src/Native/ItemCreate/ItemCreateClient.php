@@ -4,6 +4,7 @@
  */
 
 namespace MercadoLibre\Native\ItemCreate;
+use MercadoLibre\Core\Response;
 use MercadoLibre\Native\NativeClient;
 
 class ItemCreateClient extends NativeClient {
@@ -16,6 +17,10 @@ class ItemCreateClient extends NativeClient {
 
 	public function send() {
 		$rsp_data = parent::send();
-		return new ItemCreateResponse($rsp_data['result'],$rsp_data['error'], $rsp_data['msg'], ['item_id' =>$rsp_data['id']]);
+		return new ItemCreateResponse(
+			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
+			$rsp_data['cause'],
+			$rsp_data['error']?$rsp_data['message']:'success',
+			['item_id' =>$rsp_data['id']]);
 	}
 }

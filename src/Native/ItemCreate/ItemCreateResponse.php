@@ -8,7 +8,7 @@ use MercadoLibre\Native\NativeErrorMsg;
 use MercadoLibre\Native\NativeResponse;
 
 /**
- * @property string rma_no    退货单号
+ * @property string item_id    产品id
  */
 class ItemCreateResponse extends NativeResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
