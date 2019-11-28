@@ -16,6 +16,6 @@ class ItemCreateClient extends NativeClient {
 
 	public function send() {
 		$rsp_data = parent::send();
-		return new ItemCreateResponse($rsp_data['result'],$rsp_data['error'], $rsp_data['msg'], ['item_id' =>$rsp_data['data']]);
+		return new ItemCreateResponse($rsp_data['result'],$rsp_data['error'], $rsp_data['msg'], ['item_id' =>$rsp_data['id']]);
 	}
 }

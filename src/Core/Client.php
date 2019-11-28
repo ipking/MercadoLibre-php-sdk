@@ -3,7 +3,14 @@
 namespace MercadoLibre\Core;
 
 abstract class Client{
+	
 	public static $debug = false;
+	
+	/**
+	 * 请求方式
+	 */
+	protected $method = 'GET';
+	
 	/**
 	 * 请求地址
 	 */
@@ -28,20 +35,25 @@ abstract class Client{
 	private static $app_secret;
 	
 	/**
-	 * 通过OAuth授权方式获得，要求软件服务商必须传入
+	 * 通过OAuth授权方式获得
 	 */
-	private static $access_token;
+	private $access_token;
 
 	/**
-	 * 设置客户鉴权信息 (软件服务商接入 access_token不能为空 )
+	 * 设置客户鉴权信息
 	 * @param $app_key
 	 * @param $app_secret
-	 * @param $access_token
 	 */
-	public static function setAuthInfo($app_key, $app_secret,$access_token=null){
+	public static function setAuthInfo($app_key, $app_secret){
 		self::$app_key = $app_key;
 		self::$app_secret = $app_secret;
-		self::$access_token = $access_token;
+	}
+	
+	/**
+	 * @param $access_token
+	 */
+	public function setAccessToken($access_token){
+		$this->access_token = $access_token;
 	}
 	
 	/**
@@ -82,43 +94,37 @@ abstract class Client{
 		//校验数据
 		$this->param->validateAll();
 		
-		
-		//设置鉴权数据
-		//按首字母升序排列
-		$url_param = [
-			'app_key'   => self::$app_key,
-			'format'    => $this->format,
-			'method'    => $this->method,
-			'timestamp' => $this->timestamp,
-			'v'         => $this->v,
-		];
-		
 		$arr_data = $this->param->getDataAsArray();
 		$json_data = json_encode($arr_data);
 		
-		$auth_str = '';
-		foreach($url_param as $key => $value){
-			$auth_str .= $key.$value;
+		if($this->access_token){
+			$this->url .= '?access_token='.$this->access_token;
 		}
-		$auth_str.=$json_data.self::$app_secret;
-		
-		$sign = strtolower(md5($auth_str));
-		
-		$url_param_str = [];
-		foreach($url_param as $key => $value){
-			$url_param_str[] = $key.'='.$value;
-		}
-		
-		$url_param_str[] = 'sign='.$sign;
-		self::$access_token and $url_param_str[] = 'access_token='.self::$access_token;
 		
 		if(self::$debug){
 			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
-			echo $this->url.'?'.join('&',$url_param_str).PHP_EOL;
+			echo $this->url.PHP_EOL;
 			echo $json_data;
 			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
 		}
-		$this->client_response = Curl::postInJSON($this->url.'?'.join('&',$url_param_str), $arr_data);
+		switch($this->method){
+			case "GET":
+				$this->client_response = Curl::get($this->url);
+				break;
+			case "POST":
+				$this->client_response = Curl::post($this->url, $arr_data);
+				break;
+			case "PUT":
+				$this->client_response = Curl::put($this->url, $arr_data);
+				break;
+			case "DEL":
+				$this->client_response = Curl::del($this->url, $arr_data);
+				break;
+			default:
+				throw new \Exception('method '.$this->method.' not yet supply');
+				break;
+		}
+		
 		if(self::$debug){
 			echo "\n============== RSP =================\n";
 			echo $this->client_response;

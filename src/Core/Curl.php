@@ -105,7 +105,7 @@ abstract class Curl{
 	/**
 	 * CURL-post方式获取数据
 	 * @param string $url URL
-	 * @param String $data POST数据
+	 * @param array $data POST数据
 	 * @param int $timeout 请求时间
 	 * @param array $curl_option
 	 * @throws HttpException
