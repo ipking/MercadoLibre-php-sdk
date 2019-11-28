@@ -98,7 +98,12 @@ abstract class Client{
 		$json_data = json_encode($arr_data);
 		
 		if($this->access_token){
-			$this->url .= '?access_token='.$this->access_token;
+			$access_token = 'access_token='.$this->access_token;
+			if(strpos($this->url,'?')){
+				$this->url .= '&'.$access_token;
+			}else{
+				$this->url .= '?'.$access_token;
+			}
 		}
 		
 		if(self::$debug){
