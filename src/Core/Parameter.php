@@ -12,8 +12,8 @@ class Parameter extends DataProto{
 	const PARAM_TYPE_STRING = 'string';
 	const PARAM_TYPE_OBJECT = 'object';
 	const PARAM_TYPE_ARRAY = 'array';
-	const PARAM_TYPE_LIST = self::PARAM_TYPE_ARRAY;
 	const PARAM_TYPE_ENUM = 'enum';
+	const PARAM_TYPE_BOOL = 'bool';
 
 	private $defines;
 	
@@ -95,6 +95,11 @@ class Parameter extends DataProto{
 			case self::PARAM_TYPE_STRING:
 				if(!is_string($value) and !is_numeric($value)){
 					throw new ParamValidateException('parameter ['.$field.'] type error, <string> required, <'.gettype($value).'> given');
+				}
+				break;
+			case self::PARAM_TYPE_BOOL:
+				if($value !== true or $value !== false){
+					throw new ParamValidateException('parameter ['.$field.'] type error, <bool> required, <'.gettype($value).'> given');
 				}
 				break;
 				

@@ -1,6 +1,6 @@
 <?php
 /**
- * 创建退货预报单的响应
+ * 创建产品的响应
  */
 
 namespace MercadoLibre\Native\ItemCreate;
