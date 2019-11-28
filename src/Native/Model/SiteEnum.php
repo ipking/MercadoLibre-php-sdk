@@ -14,8 +14,8 @@ class SiteEnum{
 	const SITE_MLV = 'MLV';
 	const SITE_MPA = 'MPA';
 	const SITE_MPE = 'MPE';
-	const SITE_MPT = 'MPT';
 	const SITE_MRD = 'MRD';
+	const SITE_MPT = 'MPT';
 
 	public static $NAME_MAP = array(
 		self::SITE_MLA  => '阿根廷',
@@ -29,8 +29,8 @@ class SiteEnum{
 		self::SITE_MLV  => '委内瑞拉',
 		self::SITE_MPA  => '巴拿马',
 		self::SITE_MPE  => '秘鲁',
-		self::SITE_MPT  => '葡萄牙',
 		self::SITE_MRD  => '多米尼加',
+		self::SITE_MPT  => '葡萄牙',
 	);
 	
 	public static $AUTH_URL = array(
@@ -45,7 +45,7 @@ class SiteEnum{
 		self::SITE_MLV => "https://auth.mercadolibre.com.ve", // Venezuela
 		self::SITE_MPA => "https://auth.mercadolibre.com.pa", // Panama
 		self::SITE_MPE => "https://auth.mercadolibre.com.pe", // Peru
+		self::SITE_MRD => "https://auth.mercadolibre.com.do",  // Dominicana
 		self::SITE_MPT => "https://auth.mercadolibre.com.pt", // Prtugal
-		self::SITE_MRD => "https://auth.mercadolibre.com.do"  // Dominicana
 	);
 }
