@@ -1,5 +1,5 @@
 {
-    "name": "ipking/MercadoLibre-php",
+    "name": "ipking/mercadolibre-php",
     "description": "MercadoLibre PHP API.",
     "type": "library",
     "license": "Apache-2.0",
