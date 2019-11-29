@@ -21,7 +21,7 @@ use MercadoLibre\Native\NativeParameter;
  * @property float price
  * @property String buying_mode
  * @property String category_id
- * @property array pictures
+ * @property PicturesParameter[] pictures
  * @property String warranty
  */
 class ItemCreateParameter extends NativeParameter
