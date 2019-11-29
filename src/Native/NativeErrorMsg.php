@@ -8,6 +8,9 @@ namespace MercadoLibre\Native;
 class NativeErrorMsg {
 	
 	public static function getMsg($errors){
+		if(!$errors){
+			return '';
+		}
 		$msg = '';
 		foreach($errors as $error){
 			$msg.= '['.$error['message'].']';
