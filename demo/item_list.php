@@ -15,7 +15,7 @@ $client->setAccessToken($access_token);
 $rsp = $client->send();
 
 if($rsp->isSuccess()){
-	var_dump($rsp->results);
+	var_dump($rsp->item_ids);
 } else {
 	die($rsp->msg);
 }
