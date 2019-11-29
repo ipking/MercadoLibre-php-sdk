@@ -17,6 +17,7 @@ class ItemListClient extends NativeClient {
 
 	public function send() {
 		$rsp_data = parent::send();
+		$rsp_data['item_ids']=$rsp_data['results'];
 		return new ItemListResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
