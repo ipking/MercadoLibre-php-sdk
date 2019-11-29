@@ -1,12 +1,13 @@
 <?php
 /**
- * 创建产品
+ * 授权
  */
 
-namespace MercadoLibre\Native;
+namespace MercadoLibre\Native\Auth;
 
 
 use MercadoLibre\Core\Curl;
+use MercadoLibre\Core\Response;
 use MercadoLibre\Native\Model\SiteEnum;
 
 class AuthClient {
@@ -47,7 +48,12 @@ class AuthClient {
 		);
 		$auth_uri = $auth_url."/oauth/token?".http_build_query($params);
 		$rsp = Curl::post($auth_uri,[]);
-		return $rsp;
+		$rsp_data = json_decode($rsp,1);
+		return new AuthResponse(
+			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
+			$rsp_data['cause'],
+			$rsp_data['error']?$rsp_data['message']:'success',
+			$rsp_data);
 	}
 	
 	public function refreshAccessToken($refresh_token) {
@@ -60,6 +66,11 @@ class AuthClient {
 		);
 		$auth_uri = $auth_url."/oauth/token";
 		$rsp = Curl::post($auth_uri,$params);
-		return $rsp;
+		$rsp_data = json_decode($rsp,1);
+		return new AuthResponse(
+			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
+			$rsp_data['cause'],
+			$rsp_data['error']?$rsp_data['message']:'success',
+			$rsp_data);
 	}
 }
