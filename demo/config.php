@@ -12,7 +12,9 @@ NativeClient::$debug = true;
 //根据自己的系统 业务需要 保存到 文件 数据库等等地方
 NativeClient::setSendCallback(function(NativeClient $client){
 	
-	echo json_encode($client->getParam()->getDataAsArray()).PHP_EOL;
+	echo json_encode($client->getMethod()).PHP_EOL;
+	echo json_encode($client->getUrl()).PHP_EOL;
+	echo json_encode($client->getData()).PHP_EOL;
 	echo $client->getResponse().PHP_EOL;
 	
 	//收集记录

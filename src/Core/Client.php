@@ -15,6 +15,10 @@ abstract class Client{
 	 * 请求地址
 	 */
 	protected $url;
+	/**
+	 * 请求数据
+	 */
+	protected $data;
 	
 	/** @var Parameter $param */
 	protected $param;
@@ -54,11 +58,26 @@ abstract class Client{
 	}
 	
 	/**
-	 * @return \MercadoLibre\Core\Parameter $param
+	 * @return string
 	 */
-	public function getParam(){
-		return $this->param;
+	public function getMethod(){
+		return $this->method;
 	}
+	
+	/**
+	 * @return string
+	 */
+	public function getUrl(){
+		return $this->url;
+	}
+	
+	/**
+	 * @return string
+	 */
+	public function getData(){
+		return $this->data;
+	}
+	
 	/**
 	 * @return string
 	 */
@@ -87,6 +106,7 @@ abstract class Client{
 	 * @throws \MercadoLibre\exception\HttpException
 	 */
 	protected function sendData($arr_data){
+		$this->data = $arr_data;
 		$json_data = json_encode($arr_data);
 		
 		if($this->access_token){
