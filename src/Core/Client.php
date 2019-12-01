@@ -109,7 +109,7 @@ abstract class Client{
 				$this->client_response = Curl::get($this->url);
 				break;
 			case "POST":
-				$this->client_response = Curl::postInJSON($this->url, $arr_data);
+				$this->client_response = Curl::post($this->url, $arr_data);
 				break;
 			case "PUT":
 				$this->client_response = Curl::put($this->url, $arr_data);

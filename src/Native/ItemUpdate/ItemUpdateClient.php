@@ -26,6 +26,6 @@ class ItemUpdateClient extends NativeClient {
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['error']?$rsp_data['message']:'success',
-			$rsp_data);
+			['item'=>$rsp_data]);
 	}
 }

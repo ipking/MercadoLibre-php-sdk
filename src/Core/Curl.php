@@ -78,89 +78,8 @@ abstract class Curl{
 		return $curl;
 	}
 	
-	/**
-	 * CURL-get方式获取数据
-	 * @param string $url URL
-	 * @param int $timeout 请求时间
-	 * @param array $curl_option
-	 * @throws HttpException
-	 * @return bool|mixed
-	 */
-	public static function get($url, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		$opt = array(
-			CURLOPT_TIMEOUT => $timeout,
-		);
-		
-		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
-		$curl = self::getCurlInstance($url, $curl_option);
-		$content = curl_exec($curl);
-		$curl_errno = curl_errno($curl);
-		if($curl_errno>0){
-			throw new HttpException(curl_error($curl));
-		}
-		curl_close($curl);
-		return $content;
-	}
 	
-	/**
-	 * CURL-post方式获取数据
-	 * @param string $url URL
-	 * @param array $data POST数据
-	 * @param int $timeout 请求时间
-	 * @param array $curl_option
-	 * @throws HttpException
-	 * @return bool|mixed
-	 */
-	public static function post($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		$opt = array(
-			CURLOPT_POST           => true,
-			CURLOPT_POSTFIELDS     => $data,
-			CURLOPT_TIMEOUT        => $timeout,
-			CURLOPT_RETURNTRANSFER => 1
-		);
-		
-		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
-		$curl = self::getCurlInstance($url, $curl_option);
-		$content = curl_exec($curl);
-		$curl_errno = curl_errno($curl);
-		$curl_msg = curl_error($curl);
-		if($curl_errno>0){
-			throw new HttpException($curl_msg);
-		}
-		curl_close($curl);
-		return $content;
-	}
 	
-	/**
-	 * post文件
-	 * @param $url
-	 * @param array $data
-	 * @param array $files
-	 * @param int $timeout
-	 * @param array $curl_option
-	 * @return mixed
-	 * @throws HttpException
-	 */
-	public static function postFiles($url, $data = array(), array $files, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		$opt = array(
-			CURLOPT_POST           => true,
-			CURLOPT_TIMEOUT        => $timeout,
-			CURLOPT_RETURNTRANSFER => 1
-		);
-		
-		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
-		$curl = self::getCurlInstance($url, $curl_option);
-		self::setCurlPostFields($curl, $data, $files);
-		
-		$content = curl_exec($curl);
-		$curl_errno = curl_errno($curl);
-		$curl_msg = curl_error($curl);
-		if($curl_errno>0){
-			throw new HttpException($curl_msg);
-		}
-		curl_close($curl);
-		return $content;
-	}
 	
 	/**
 	 * 多文件post提交 PHP5.3 ~ PHP 5.4.
@@ -230,36 +149,57 @@ abstract class Curl{
 	}
 	
 	/**
-	 * 使用JSON头post数据
-	 * @param $url
-	 * @param array $data
-	 * @param int $timeout
+	 * CURL-get方式获取数据
+	 * @param string $url URL
+	 * @param int $timeout 请求时间
 	 * @param array $curl_option
+	 * @throws HttpException
 	 * @return bool|mixed
 	 */
-	public static function postInJSON($url, $data = array(), $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		$data = is_array($data) ? json_encode($data) : $data;
-		$curl_option = self::arrayMergeKeepKeys(array(
-			CURLOPT_HTTPHEADER => array(
-				'Content-Type: application/json; charset=utf-8',
-				'Content-Length: '.strlen($data)
-			)
-		), $curl_option);
-		return self::post($url, $data, $timeout, $curl_option);
+	public static function get($url, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
+		$opt = array(
+			CURLOPT_TIMEOUT => $timeout,
+		);
+		
+		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
+		$curl = self::getCurlInstance($url, $curl_option);
+		$content = curl_exec($curl);
+		$curl_errno = curl_errno($curl);
+		if($curl_errno>0){
+			throw new HttpException(curl_error($curl));
+		}
+		curl_close($curl);
+		return $content;
 	}
 	
 	/**
-	 * 使用JSON头get数据
-	 * @param $url
-	 * @param int $timeout
+	 * CURL-post方式获取数据
+	 * @param string $url URL
+	 * @param array $data POST数据
+	 * @param int $timeout 请求时间
 	 * @param array $curl_option
+	 * @throws HttpException
 	 * @return bool|mixed
 	 */
-	public static function getInJSON($url, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		$curl_option = self::arrayMergeKeepKeys(array(
-			CURLINFO_CONTENT_TYPE => 'application/json'
-		), $curl_option);
-		return self::get($url, $timeout, $curl_option);
+	public static function post($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
+		$opt = array(
+			CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
+			CURLOPT_POST           => true,
+			CURLOPT_POSTFIELDS     => json_encode($data),
+			CURLOPT_TIMEOUT        => $timeout,
+			CURLOPT_RETURNTRANSFER => 1
+		);
+		
+		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
+		$curl = self::getCurlInstance($url, $curl_option);
+		$content = curl_exec($curl);
+		$curl_errno = curl_errno($curl);
+		$curl_msg = curl_error($curl);
+		if($curl_errno>0){
+			throw new HttpException($curl_msg);
+		}
+		curl_close($curl);
+		return $content;
 	}
 	
 	/**
@@ -272,16 +212,14 @@ abstract class Curl{
 	 * @return bool|mixed
 	 */
 	public static function put($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		if($data){
-			$data = http_build_query($data);
-		}
-		$opt = array(
-			CURLOPT_CUSTOMREQUEST => 'PUT',
-			CURLOPT_POSTFIELDS    => $data,
-			CURLOPT_TIMEOUT       => $timeout,
-			CURLOPT_HTTPHEADER    => array('Content-Length: '.strlen($data))
+		$body = json_encode($data);
+		$opts = array(
+			CURLOPT_HTTPHEADER => array('Content-Type: application/json'),
+			CURLOPT_CUSTOMREQUEST => "PUT",
+			CURLOPT_TIMEOUT        => $timeout,
+			CURLOPT_POSTFIELDS => $body
 		);
-		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
+		$curl_option = self::arrayMergeKeepKeys($opts, $curl_option);
 		$curl = self::getCurlInstance($url, $curl_option);
 		$content = curl_exec($curl);
 		$curl_errno = curl_errno($curl);
@@ -295,21 +233,15 @@ abstract class Curl{
 	/**
 	 * CURL-DEL方式获取数据
 	 * @param string $url URL
-	 * @param array $data POST数据
 	 * @param int $timeout 请求时间
 	 * @param array $curl_option
 	 * @throws HttpException
 	 * @return bool|mixed
 	 */
-	public static function del($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
-		if($data){
-			$data = http_build_query($data);
-		}
+	public static function del($url, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
 		$opt = array(
-			CURLOPT_CUSTOMREQUEST => 'DEL',
-			CURLOPT_POSTFIELDS    => $data,
-			CURLOPT_TIMEOUT       => $timeout,
-			CURLOPT_HTTPHEADER    => array('Content-Length: '.strlen($data))
+			CURLOPT_CUSTOMREQUEST => "DELETE",
+			CURLOPT_TIMEOUT        => $timeout,
 		);
 		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
 		$curl = self::getCurlInstance($url, $curl_option);

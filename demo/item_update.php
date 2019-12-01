@@ -1,16 +1,11 @@
 <?php
 
-
-
-include dirname(__DIR__).'/src/autoload.inc.php';
 include 'config.php';
-
 
 $param = new \MercadoLibre\Native\ItemUpdate\ItemUpdateParameter();
 $param->item_id = 'MLM1234';
 
 $client = new \MercadoLibre\Native\ItemUpdate\ItemUpdateClient($param);
-$client::$debug = true;
 $client->setAccessToken($access_token);
 
 $json =<<<EOL

@@ -21,6 +21,6 @@ class ItemCreateClient extends NativeClient {
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['error']?$rsp_data['message']:'success',
-			['item_id' =>$rsp_data['id']]);
+			['item' =>$rsp_data]);
 	}
 }

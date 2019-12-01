@@ -1,12 +1,10 @@
 <?php
 
-
 use MercadoLibre\Native\ItemCreate\Model\ConditionEnum;
 use MercadoLibre\Native\ItemCreate\Model\PicturesParameter;
 use MercadoLibre\Native\Model\CurrencyEnum;
 use MercadoLibre\Native\Model\ListingTypesEnum;
 
-include dirname(__DIR__).'/src/autoload.inc.php';
 include 'config.php';
 
 
@@ -35,13 +33,11 @@ $param->pictures = $ps;
 $param->warranty = '';
 
 $client = new \MercadoLibre\Native\ItemCreate\ItemCreateClient($param);
-$client::$debug = true;
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 
 if($rsp->isSuccess()){
-	echo $rsp->item->id;
-	var_dump($rsp);
+	print_r($rsp->getDataAsArray());
 } else {
 	die($rsp->msg);
 }
