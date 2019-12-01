@@ -81,7 +81,7 @@ class ItemInfo extends NativeParameter
 			'thumbnail'                   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'secure_thumbnail'            => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'video_id'                    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'accepts_mercadopago'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'accepts_mercadopago'         => [self::PARAM_TYPE_BOOL, self::PARAM_OPTIONAL],
 			'international_delivery_mode' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'seller_contact'              => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'listing_source'              => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
