@@ -22,32 +22,13 @@ abstract class Client{
 	/** @var string $client_response */
 	protected $client_response;
 	
-	private static $callback;
-	
-	/**
-	 * 应用接入申请的AppKey
-	 */
-	private static $app_key;
-	
-	/**
-	 * 应用接入申请的AppSecret
-	 */
-	private static $app_secret;
+	protected static $callback;
 	
 	/**
 	 * 通过OAuth授权方式获得
 	 */
-	private $access_token;
+	protected $access_token;
 
-	/**
-	 * 设置客户鉴权信息
-	 * @param $app_key
-	 * @param $app_secret
-	 */
-	public static function setAuthInfo($app_key, $app_secret){
-		self::$app_key = $app_key;
-		self::$app_secret = $app_secret;
-	}
 	
 	/**
 	 * @param $access_token
@@ -89,12 +70,23 @@ abstract class Client{
 	/**
 	 * 发送数据
 	 * @return array
+	 * @throws \MercadoLibre\exception\HttpException
+	 * @throws \MercadoLibre\exception\ParamValidateException
 	 */
 	protected function send(){
 		//校验数据
 		$this->param->validateAll();
-		
 		$arr_data = $this->param->getDataAsArray();
+		return $this->sendData($arr_data);
+	}
+	
+	/**
+	 * 发送数据
+	 * @param array $arr_data
+	 * @return array
+	 * @throws \MercadoLibre\exception\HttpException
+	 */
+	protected function sendData($arr_data){
 		$json_data = json_encode($arr_data);
 		
 		if($this->access_token){

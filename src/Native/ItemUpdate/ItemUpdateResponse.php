@@ -1,17 +1,17 @@
 <?php
 /**
- * 创建产品的响应
+ * 更新产品的响应
  */
 
-namespace MercadoLibre\Native\ItemCreate;
+namespace MercadoLibre\Native\ItemUpdate;
 use MercadoLibre\Native\ItemInfo\Model\ItemInfo;
 use MercadoLibre\Native\NativeErrorMsg;
 use MercadoLibre\Native\NativeResponse;
 
 /**
- * @property ItemInfo item    产品
+ * @property ItemInfo item
  */
-class ItemCreateResponse extends NativeResponse{
+class ItemUpdateResponse extends NativeResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = NativeErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
