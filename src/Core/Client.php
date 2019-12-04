@@ -106,8 +106,7 @@ abstract class Client{
 	 * @throws \MercadoLibre\exception\HttpException
 	 */
 	protected function sendData($arr_data){
-		$this->data = $arr_data;
-		$json_data = json_encode($arr_data);
+		$this->data = json_encode($arr_data);
 		
 		if($this->access_token){
 			$access_token = 'access_token='.$this->access_token;
@@ -121,7 +120,7 @@ abstract class Client{
 		if(self::$debug){
 			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
 			echo $this->url.PHP_EOL;
-			echo $json_data;
+			echo $this->data;
 			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
 		}
 		switch($this->method){

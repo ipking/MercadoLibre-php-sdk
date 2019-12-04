@@ -6,16 +6,17 @@
 namespace MercadoLibre\Native\Auth;
 
 
-use MercadoLibre\Core\Curl;
+use MercadoLibre\Core\Client;
 use MercadoLibre\Core\Response;
 use MercadoLibre\Native\Model\SiteEnum;
 
-class AuthClient {
+class AuthClient extends Client{
 	
 	protected $client_id;
 	protected $client_secret;
 	
 	protected static $API_ROOT_URL = "https://api.mercadolibre.com";
+	
 	/**
 	 * @param $client_id
 	 */
@@ -46,9 +47,9 @@ class AuthClient {
 			"code"          => $code,
 			"redirect_uri"  => $redirect_uri
 		);
-		$auth_uri = $auth_url."/oauth/token?".http_build_query($params);
-		$rsp = Curl::post($auth_uri,[]);
-		$rsp_data = json_decode($rsp,1);
+		$this->url = $auth_url."/oauth/token?".http_build_query($params);
+		$this->method = 'POST';
+		$rsp_data = $this->sendData([]);
 		return new AuthResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
@@ -64,9 +65,9 @@ class AuthClient {
 			"client_secret" => $this->client_secret,
 			"refresh_token" => $refresh_token
 		);
-		$auth_uri = $auth_url."/oauth/token";
-		$rsp = Curl::post($auth_uri,$params);
-		$rsp_data = json_decode($rsp,1);
+		$this->url = $auth_url."/oauth/token";
+		$this->method = 'POST';
+		$rsp_data = $this->sendData($params);
 		return new AuthResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
