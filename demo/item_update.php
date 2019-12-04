@@ -3,7 +3,7 @@
 include 'config.php';
 
 $param = new \MercadoLibre\Native\ItemUpdate\ItemUpdateParameter();
-$param->item_id = 'MLM1234';
+$param->item_id = '';
 
 $client = new \MercadoLibre\Native\ItemUpdate\ItemUpdateClient($param);
 $client->setAccessToken($access_token);
