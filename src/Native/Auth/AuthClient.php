@@ -48,7 +48,7 @@ class AuthClient extends Client{
 			"redirect_uri"  => $redirect_uri
 		);
 		$this->url = $auth_url."/oauth/token?".http_build_query($params);
-		$this->method = 'POST';
+		$this->method = 'POST_FIELD';
 		$rsp_data = $this->sendData([]);
 		return new AuthResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,

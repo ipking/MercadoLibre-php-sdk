@@ -111,7 +111,7 @@ abstract class Curl{
 	 * @throws HttpException
 	 * @return bool|mixed
 	 */
-	public static function post($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
+	public static function postInJson($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option = array()){
 		$opt = array(
 			CURLOPT_HTTPHEADER     => array('Content-Type: application/json'),
 			CURLOPT_POST           => true,
@@ -128,6 +128,38 @@ abstract class Curl{
 		if($curl_errno>0){
 			throw new HttpException($curl_msg);
 		}
+		curl_close($curl);
+		return $content;
+	}
+	
+	/**
+	 * CURL-post方式获取数据
+	 * @param string $url URL
+	 * @param mixed $data POST数据
+	 * @param int $timeout 请求时间
+	 * @param array $curl_option
+	 * @throws HttpException
+	 * @return bool|mixed
+	 */
+	public static function postInField($url, $data, $timeout = self::DEFAULT_TIMEOUT, $curl_option=array()) {
+		if($data && !is_string($data)){
+			$data = http_build_query($data);
+		}
+		$opt = array(
+			CURLOPT_POST           => true,
+			CURLOPT_POSTFIELDS     => $data,
+			CURLOPT_TIMEOUT        => $timeout,
+			CURLOPT_RETURNTRANSFER => 1,
+		);
+		$curl_option = self::arrayMergeKeepKeys($opt, $curl_option);
+		$curl = self::getCurlInstance($url, $curl_option);
+		$content = curl_exec($curl);
+		$curl_errno = curl_errno($curl);
+		$curl_msg = curl_error($curl);
+		if($curl_errno>0){
+			throw new HttpException($curl_msg);
+		}
+		
 		curl_close($curl);
 		return $content;
 	}
