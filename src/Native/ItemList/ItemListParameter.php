@@ -9,6 +9,8 @@ use MercadoLibre\Native\NativeParameter;
 
 /**
  * @property String user_id
+ * @property String offset
+ * @property String limit
  */
 class ItemListParameter extends NativeParameter
 {
@@ -16,6 +18,8 @@ class ItemListParameter extends NativeParameter
 	{
 		parent::__construct($data, array(
 			'user_id' => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
+			'offset'  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'limit'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}
 }

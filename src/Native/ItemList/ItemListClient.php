@@ -12,7 +12,11 @@ class ItemListClient extends NativeClient {
 	protected $method = 'GET';
 	
 	public function __construct(ItemListParameter $parameter) {
-		parent::__construct('/users/'.$parameter->user_id.'/items/search',$parameter);
+		$param = [
+			'offset' => $parameter->offset,
+			'limit'  => $parameter->limit,
+		];
+		parent::__construct('/users/'.$parameter->user_id.'/items/search?'.http_build_query($param),$parameter);
 	}
 
 	public function send() {
