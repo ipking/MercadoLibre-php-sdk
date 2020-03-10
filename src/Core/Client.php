@@ -123,26 +123,32 @@ abstract class Client{
 			echo $this->data;
 			echo "\n+++++++++++++++++ REQ +++++++++++++++\n";
 		}
-		switch($this->method){
-			case "GET":
-				$this->client_response = Curl::get($this->url);
-				break;
-			case "POST":
-				$this->client_response = Curl::postInJson($this->url, $arr_data);
-				break;
-			case "POST_FIELD":
-				$this->client_response = Curl::postInField($this->url, $arr_data);
-				break;
-			case "PUT":
-				$this->client_response = Curl::put($this->url, $arr_data);
-				break;
-			case "DEL":
-				$this->client_response = Curl::del($this->url, $arr_data);
-				break;
-			default:
-				throw new \Exception('method '.$this->method.' not yet supply');
-				break;
+		
+		try{
+			switch($this->method){
+				case "GET":
+					$this->client_response = Curl::get($this->url);
+					break;
+				case "POST":
+					$this->client_response = Curl::postInJson($this->url, $arr_data);
+					break;
+				case "POST_FIELD":
+					$this->client_response = Curl::postInField($this->url, $arr_data);
+					break;
+				case "PUT":
+					$this->client_response = Curl::put($this->url, $arr_data);
+					break;
+				case "DEL":
+					$this->client_response = Curl::del($this->url, $arr_data);
+					break;
+				default:
+					throw new \Exception('method '.$this->method.' not yet supply');
+					break;
+			}
+		}catch(\Exception $e){
+			return ['error'=>1,'message'=>$e->getMessage()];
 		}
+		
 		
 		if(self::$debug){
 			echo "\n============== RSP =================\n";
