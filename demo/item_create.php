@@ -1,5 +1,6 @@
 <?php
 
+use MercadoLibre\Native\ItemCreate\Model\AttributesParameter;
 use MercadoLibre\Native\ItemCreate\Model\ConditionEnum;
 use MercadoLibre\Native\ItemCreate\Model\PicturesParameter;
 use MercadoLibre\Native\Model\CurrencyEnum;
@@ -29,8 +30,37 @@ foreach($pics as $pic){
 	$p->source = $pic;
 	$ps[] = $p;
 }
+
 $param->pictures = $ps;
-$param->warranty = '';
+$attrs = [
+	[
+		'id'=>'BRAND',
+		'value_name'=>'YK',
+	],
+	[
+		'id'=>'MODEL',
+		'value_name'=>'TK3246',
+	],
+	[
+		'id'=>'COLOR',
+		'value_id'=>'52049',
+	],
+	[
+		'id'=>'VOLTAGE',
+		'value_name'=>'198813',
+	],
+];
+$attr = [];
+foreach($attrs as $a){
+	$p = new AttributesParameter();
+	$p->id = $a['id'];
+	$p->value_id = $a['value_id'];
+	$p->value_name = $a['value_name'];
+	$attr[] = $p;
+}
+$param->attributes = $attr;
+
+$param->warranty = '12 months';
 
 $client = new \MercadoLibre\Native\ItemCreate\ItemCreateClient($param);
 $client->setAccessToken($access_token);

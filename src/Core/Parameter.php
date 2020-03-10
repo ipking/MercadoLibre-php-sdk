@@ -14,6 +14,7 @@ class Parameter extends DataProto{
 	const PARAM_TYPE_ARRAY = 'array';
 	const PARAM_TYPE_ENUM = 'enum';
 	const PARAM_TYPE_BOOL = 'bool';
+	const PARAM_TYPE_ISSET = 'isset';
 
 	private $defines;
 	
@@ -86,6 +87,9 @@ class Parameter extends DataProto{
 			return;
 		}
 		switch($type){
+			case self::PARAM_TYPE_ISSET:
+				//do noting
+				break;
 			case self::PARAM_TYPE_NUMBER:
 				if(!is_numeric($value)){
 					throw new ParamValidateException('parameter ['.$field.'] type error, <number> required, <'.gettype($value).'> given');
