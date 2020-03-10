@@ -7,6 +7,7 @@ use Iterator;
 
 abstract class DataProto implements Iterator, ArrayAccess, \JsonSerializable {
 	protected $data;
+	protected $defines;
 	
 	/**
 	 * set data
@@ -54,17 +55,18 @@ abstract class DataProto implements Iterator, ArrayAccess, \JsonSerializable {
 	 * convert to array
 	 * @return array
 	 */
-	public function getDataAsArray(){
+	public function getDataAsArray($defines=array()){
 		$tmp = [];
 		foreach($this->data?:[] as $k=>$item){
+			list($type, $required, $ext_define_type) = $defines[$k];
 			if($item instanceof Parameter){
-				$tmp[$k] = $item->getDataAsArray();
+				$tmp[$k] = $item->getDataAsArray($item->getDefines());
 			}
 			else if(is_array($item)){
 				$sub_tmp = [];
 				foreach($item as $sub_k=>$sub_item){
 					if($sub_item instanceof Parameter){
-						$data = $sub_item->getDataAsArray();
+						$data = $sub_item->getDataAsArray($sub_item->getDefines());
 						$sub_tmp[$sub_k] = $data;
 					} else {
 						$sub_tmp[$sub_k] = $sub_item;
@@ -73,6 +75,9 @@ abstract class DataProto implements Iterator, ArrayAccess, \JsonSerializable {
 				$tmp[$k] = $sub_tmp;
 			} else {
 				$tmp[$k] = $item;
+			}
+			if($required == Parameter::PARAM_ISSET and !$tmp[$k]){
+				unset($tmp[$k]);
 			}
 		}
 		return $tmp;

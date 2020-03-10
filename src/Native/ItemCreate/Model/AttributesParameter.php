@@ -15,8 +15,8 @@ class AttributesParameter extends NativeParameter
 	{
 		parent::__construct($data, array(
 			'id'         => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
-			'value_id'   => [self::PARAM_TYPE_ISSET, self::PARAM_OPTIONAL],
-			'value_name' => [self::PARAM_TYPE_ISSET, self::PARAM_OPTIONAL],
+			'value_id'   => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
+			'value_name' => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
 		));
 	}
 }

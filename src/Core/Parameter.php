@@ -7,6 +7,7 @@ use MercadoLibre\exception\ParamValidateException;
 class Parameter extends DataProto{
 	const PARAM_REQUIRED = 'required';
 	const PARAM_OPTIONAL = 'optional';
+	const PARAM_ISSET = 'isset';
 	
 	const PARAM_TYPE_NUMBER = 'number';
 	const PARAM_TYPE_STRING = 'string';
@@ -14,9 +15,7 @@ class Parameter extends DataProto{
 	const PARAM_TYPE_ARRAY = 'array';
 	const PARAM_TYPE_ENUM = 'enum';
 	const PARAM_TYPE_BOOL = 'bool';
-	const PARAM_TYPE_ISSET = 'isset';
 
-	private $defines;
 	
 	public function __construct($data = array(), $defines = array()){
 		$this->defines = $defines;
@@ -87,9 +86,6 @@ class Parameter extends DataProto{
 			return;
 		}
 		switch($type){
-			case self::PARAM_TYPE_ISSET:
-				//do noting
-				break;
 			case self::PARAM_TYPE_NUMBER:
 				if(!is_numeric($value)){
 					throw new ParamValidateException('parameter ['.$field.'] type error, <number> required, <'.gettype($value).'> given');

@@ -43,7 +43,7 @@ class ItemCreateParameter extends NativeParameter
 			'category_id'         => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
 			'pictures'            => [self::PARAM_TYPE_ARRAY, self::PARAM_REQUIRED,PicturesParameter::class],
 			'warranty'            => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'attributes'          => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,AttributesParameter::class ],
+			'attributes'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET,AttributesParameter::class ],
 		));
 	}
 }

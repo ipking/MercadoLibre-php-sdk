@@ -95,7 +95,7 @@ abstract class Client{
 	protected function send(){
 		//校验数据
 		$this->param->validateAll();
-		$arr_data = $this->param->getDataAsArray();
+		$arr_data = $this->param->getDataAsArray($this->param->getDefines());
 		return $this->sendData($arr_data);
 	}
 	

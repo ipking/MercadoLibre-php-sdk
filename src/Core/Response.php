@@ -24,7 +24,6 @@ class Response extends DataProto{
 	const PARAM_TYPE_ARRAY = 'array';
 	const PARAM_TYPE_LIST = self::PARAM_TYPE_ARRAY;
 	
-	private $defines;
 	
 	public function __construct($result,$errors, $message = '', $data = array(), $defines = array()){
 		$this->result = $result;
