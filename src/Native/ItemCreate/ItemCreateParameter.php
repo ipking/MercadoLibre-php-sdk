@@ -8,6 +8,7 @@ namespace MercadoLibre\Native\ItemCreate;
 use MercadoLibre\Native\ItemCreate\Model\AttributesParameter;
 use MercadoLibre\Native\ItemCreate\Model\ConditionEnum;
 use MercadoLibre\Native\ItemCreate\Model\PicturesParameter;
+use MercadoLibre\Native\ItemCreate\Model\VariationsParameter;
 use MercadoLibre\Native\Model\CurrencyEnum;
 use MercadoLibre\Native\NativeParameter;
 
@@ -24,7 +25,8 @@ use MercadoLibre\Native\NativeParameter;
  * @property String category_id
  * @property PicturesParameter[] pictures
  * @property String warranty
- * @property String attributes
+ * @property AttributesParameter[] attributes
+ * @property VariationsParameter[] variations
  */
 class ItemCreateParameter extends NativeParameter
 {
@@ -44,6 +46,7 @@ class ItemCreateParameter extends NativeParameter
 			'pictures'            => [self::PARAM_TYPE_ARRAY, self::PARAM_REQUIRED,PicturesParameter::class],
 			'warranty'            => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'attributes'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET,AttributesParameter::class ],
+			'variations'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET,VariationsParameter::class ],
 		));
 	}
 }

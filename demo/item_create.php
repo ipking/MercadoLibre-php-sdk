@@ -3,6 +3,7 @@
 use MercadoLibre\Native\ItemCreate\Model\AttributesParameter;
 use MercadoLibre\Native\ItemCreate\Model\ConditionEnum;
 use MercadoLibre\Native\ItemCreate\Model\PicturesParameter;
+use MercadoLibre\Native\ItemCreate\Model\VariationsParameter;
 use MercadoLibre\Native\Model\CurrencyEnum;
 use MercadoLibre\Native\Model\ListingTypesEnum;
 
@@ -17,7 +18,7 @@ $param->description = 'Lindo Ray_Ban_Original_Wayfarer';
 $param->listing_type_id = ListingTypesEnum::TYPE_BRONZE;
 $param->title = 'Audifonos Manos Libre Bluetooth';
 $param->available_quantity = '1';
-$param->price = '400';
+$param->price = '1000';
 $param->buying_mode = 'buy_it_now';
 $param->category_id = 'MLM7533';
 $pics = [
@@ -45,20 +46,40 @@ $attrs = [
 		'id'=>'COLOR',
 		'value_id'=>'52049',
 	],
-	[
-		'id'=>'VOLTAGE',
-		'value_name'=>'198813',
-	],
 ];
 $attr = [];
-foreach($attrs as $a){
-	$p = new AttributesParameter();
-	$p->id = $a['id'];
-	$p->value_id = $a['value_id'];
-	$p->value_name = $a['value_name'];
-	$attr[] = $p;
-}
+
+$a = $attrs[0];
+$p = new AttributesParameter();
+$p->id = $a['id'];
+$p->value_id = $a['value_id'];
+$p->value_name = $a['value_name'];
+$attr[] = $p;
+
+$a = $attrs[1];
+$p = new AttributesParameter();
+$p->id = $a['id'];
+$p->value_id = $a['value_id'];
+$p->value_name = $a['value_name'];
+$attr[] = $p;
+
+$a = $attrs[2];
+$p = new AttributesParameter();
+$p->id = $a['id'];
+$p->value_id = $a['value_id'];
+$p->value_name = $a['value_name'];
+
+
 $param->attributes = $attr;
+
+$variations = new VariationsParameter();
+$variations->available_quantity = 1;
+$variations->price = 1000;
+$variations->seller_custom_field = 'sku001';
+$variations->attribute_combinations = [$p];
+$variations->picture_ids = $pics;
+
+$param->variations = [$variations];
 
 $param->warranty = '12 months';
 
