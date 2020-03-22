@@ -49,6 +49,8 @@ use MercadoLibre\Native\NativeParameter;
  * @property string catalog_listing
  * @property array tags
  * @property Picture[] pictures
+ * @property Attribute[] attributes
+ * @property Variation[] variations
  */
 class ItemInfo extends NativeParameter
 {
@@ -99,6 +101,8 @@ class ItemInfo extends NativeParameter
 			'catalog_listing'             => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'tags'                        => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, self::PARAM_TYPE_STRING],
 			'pictures'                    => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Picture::class],
+			'attributes'                  => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Attribute::class],
+			'variations'                  => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Variation::class],
 		));
 	}
 }
