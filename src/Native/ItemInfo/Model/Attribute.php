@@ -20,7 +20,7 @@ class Attribute extends NativeParameter
 			'name'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'value_id'     => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'value_name'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'value_struct' => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL, ValueStruct::class],
+			'value_struct' => [self::PARAM_TYPE_OBJECT, self::PARAM_ISSET, ValueStruct::class],
 		));
 	}
 }
