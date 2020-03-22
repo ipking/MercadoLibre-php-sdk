@@ -8,7 +8,7 @@ use MercadoLibre\Native\NativeParameter;
  * @property string id
  * @property Attribute[] attribute_combinations
  * @property Attribute[] attributes
- * @property string picture_ids
+ * @property array picture_ids
  * @property string price
  * @property string available_quantity
  * @property string seller_custom_field
