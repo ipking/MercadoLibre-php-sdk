@@ -17,8 +17,8 @@ class ItemDescriptionResponse extends NativeResponse{
 		$msg = NativeErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
-			'text'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'plain_text'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'text'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'plain_text' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}
 }

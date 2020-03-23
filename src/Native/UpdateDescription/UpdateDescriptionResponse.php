@@ -1,22 +1,24 @@
 <?php
 /**
- * 更新产品的响应
+ * 产品描述的响应
  */
 
-namespace MercadoLibre\Native\ItemUpdate;
+namespace MercadoLibre\Native\UpdateDescription;
 use MercadoLibre\Native\ItemInfo\Model\ItemInfo;
 use MercadoLibre\Native\NativeErrorMsg;
 use MercadoLibre\Native\NativeResponse;
 
 /**
- * @property ItemInfo item
+ * @property string text
+ * @property string plain_text
  */
-class ItemUpdateResponse extends NativeResponse{
+class UpdateDescriptionResponse extends NativeResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = NativeErrorMsg::getMsg($errors);
-		$msg and $message = $message.':'.$msg;
+		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
-			'item'   => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL,ItemInfo::class],
+			'text'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'plain_text' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}
 }
