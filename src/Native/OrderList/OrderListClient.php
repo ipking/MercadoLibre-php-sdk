@@ -13,9 +13,13 @@ class OrderListClient extends NativeClient {
 	
 	public function __construct(OrderListParameter $parameter) {
 		$param = [
-			'offset' => $parameter->offset,
-			'limit'  => $parameter->limit,
-			'seller' => $parameter->user_id,
+			'offset'                       => $parameter->offset,
+			'limit'                        => $parameter->limit,
+			'seller'                       => $parameter->user_id,
+			'q'                            => $parameter->q,
+			'order.status'                 => $parameter->order_status,
+			'order.date_last_updated.from' => $parameter->order_date_last_updated_from,
+			'order.date_last_updated.to'   => $parameter->order_date_last_updated_to,
 		];
 		parent::__construct('/orders/search?'.http_build_query($param),$parameter);
 	}
