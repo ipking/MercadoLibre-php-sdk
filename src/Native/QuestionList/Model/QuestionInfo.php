@@ -40,7 +40,7 @@ class QuestionInfo extends NativeParameter
 			'text'                    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'id'                      => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'deleted_from_listing'    => [self::PARAM_TYPE_BOOL, self::PARAM_OPTIONAL],
-			'hold'                    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'hold'                    => [self::PARAM_TYPE_BOOL, self::PARAM_OPTIONAL],
 			'answer'                  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'user_id'                 => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'user_answered_questions' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
