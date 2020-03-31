@@ -14,6 +14,7 @@ use MercadoLibre\Native\NativeParameter;
  * @property string deleted_from_listing
  * @property string hold
  * @property string answer
+ * @property string user_id
  * @property string user_answered_questions
  * @property string answer_text
  * @property string answer_status
