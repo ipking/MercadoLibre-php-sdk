@@ -6,7 +6,7 @@ $param = new \MercadoLibre\Native\QuestionList\QuestionListParameter();
 $param->seller_id = $user_id;
 $param->offset = 0;
 $param->limit = 2;
-$param->status = 'answered';
+$param->status = 'unanswered';
 /**
 unanswered:The question has not been answered yet
 answered:The question was not answered

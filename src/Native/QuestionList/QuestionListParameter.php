@@ -1,7 +1,5 @@
 <?php
-/**
- * 订单列表的参数
- */
+
 
 namespace MercadoLibre\Native\QuestionList;
 
