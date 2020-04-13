@@ -138,7 +138,7 @@ abstract class Client{
 				case "PUT":
 					$this->client_response = Curl::put($this->url, $arr_data);
 					break;
-				case "DEL":
+				case "DELETE":
 					$this->client_response = Curl::del($this->url, $arr_data);
 					break;
 				default:
