@@ -21,7 +21,7 @@ class UpdateDescriptionClient extends NativeClient {
 	}
 
 	public function send() {
-		$rsp_data = parent::send();
+		$rsp_data = parent::sendData($this->put_data);
 		return new UpdateDescriptionResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
