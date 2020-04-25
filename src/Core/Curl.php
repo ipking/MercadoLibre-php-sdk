@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\Core;
 
-use MercadoLibre\exception\HttpException;
+use MercadoLibre\Exception\HttpException;
 
 /**
  * HTTP请求基类

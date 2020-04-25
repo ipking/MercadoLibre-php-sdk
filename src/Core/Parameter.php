@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\Core;
 
-use MercadoLibre\exception\ParamValidateException;
+use MercadoLibre\Exception\ParamValidateException;
 
 class Parameter extends DataProto{
 	const PARAM_REQUIRED = 'required';
