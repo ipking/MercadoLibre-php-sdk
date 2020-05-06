@@ -51,9 +51,9 @@ class AuthClient extends Client{
 		$this->method = 'POST_FIELD';
 		$rsp_data = $this->sendData([]);
 		return new AuthResponse(
-			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
+			$rsp_data['message']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
-			$rsp_data['error']?$rsp_data['message']:'success',
+			$rsp_data['message']?$rsp_data['message']:'success',
 			$rsp_data);
 	}
 	
@@ -69,9 +69,9 @@ class AuthClient extends Client{
 		$this->method = 'POST';
 		$rsp_data = $this->sendData($params);
 		return new AuthResponse(
-			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
+			$rsp_data['message']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
-			$rsp_data['error']?$rsp_data['message']:'success',
+			$rsp_data['message']?$rsp_data['message']:'success',
 			$rsp_data);
 	}
 }
