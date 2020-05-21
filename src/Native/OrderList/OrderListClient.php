@@ -15,7 +15,7 @@ class OrderListClient extends NativeClient {
 		$param = [
 			'offset'                       => $parameter->offset,
 			'limit'                        => $parameter->limit,
-			'seller'                       => $parameter->user_id,
+			'seller'                       => $parameter->seller_id,
 			'q'                            => $parameter->q,
 			'order.status'                 => $parameter->order_status,
 			'order.date_last_updated.from' => $parameter->order_date_last_updated_from,

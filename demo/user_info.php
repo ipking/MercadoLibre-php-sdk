@@ -3,7 +3,7 @@
 include 'config.php';
 
 $param = new \MercadoLibre\Native\UserInfo\UserInfoParameter();
-$param->user_id = $user_id;
+$param->seller_id = $user_id;
 
 $client = new \MercadoLibre\Native\UserInfo\UserInfoClient($param);
 $client->setAccessToken($access_token);

@@ -12,7 +12,7 @@ class UserInfoClient extends NativeClient {
 	protected $method = self::METHOD_GET;
 	
 	public function __construct(UserInfoParameter $parameter) {
-		parent::__construct('/users/'.$parameter->user_id,$parameter);
+		parent::__construct('/users/'.$parameter->seller_id,$parameter);
 	}
 
 	public function send() {

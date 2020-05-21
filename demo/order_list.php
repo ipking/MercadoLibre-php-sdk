@@ -3,7 +3,7 @@
 include 'config.php';
 
 $param = new \MercadoLibre\Native\OrderList\OrderListParameter();
-$param->user_id = $user_id;
+$param->seller_id = $user_id;
 //$param->offset = 0;
 //$param->limit = 2;
 //$param->order_status = 'paid';

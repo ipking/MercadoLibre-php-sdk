@@ -16,7 +16,7 @@ class ItemListClient extends NativeClient {
 			'offset' => $parameter->offset,
 			'limit'  => $parameter->limit,
 		];
-		parent::__construct('/users/'.$parameter->user_id.'/items/search?'.http_build_query($param),$parameter);
+		parent::__construct('/users/'.$parameter->seller_id.'/items/search?'.http_build_query($param),$parameter);
 	}
 
 	public function send() {
