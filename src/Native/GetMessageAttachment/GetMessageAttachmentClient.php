@@ -13,12 +13,11 @@ class GetMessageAttachmentClient extends NativeClient {
 	
 	
 	public function __construct(GetMessageAttachmentParameter $parameter) {
-		parent::__construct('/messages/attachments/'.$parameter->attachment_id);
+		parent::__construct('/messages/attachments/'.$parameter->attachment_id,$parameter);
 	}
 
 	public function send() {
-		
-		$rsp_data = parent::sendData([]);
+		$rsp_data = parent::send();
 		
 		return new GetMessageAttachmentResponse(
 			$rsp_data['message']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
