@@ -10,7 +10,7 @@ $client->setAccessToken($access_token);
 $rsp = $client->send();
 
 if($rsp->isSuccess()){
-	var_dump($rsp->question);
+	print_r($rsp->question);
 } else {
 	die($rsp->msg);
 }

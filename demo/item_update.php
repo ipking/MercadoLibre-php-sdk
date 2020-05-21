@@ -8,14 +8,25 @@ $param->item_id = '';
 $client = new \MercadoLibre\Native\ItemUpdate\ItemUpdateClient($param);
 $client->setAccessToken($access_token);
 
-$json =<<<EOL
-{
-    "status":"paused"
-}
-EOL;
+//设置免费送货
+$put_data = [
+	"shipping" => [
+		"mode"          => "custom",
+		"local_pick_up" => false,
+		"free_shipping" => true,
+		"methods"       => [],
+		"costs"         => [
+			[
+				"description"=> "Envío gratis",
+				"cost"=> "0"
+			]
+		]
+	]
+];
 
 
-$client->setPutData(json_decode($json,1));
+
+$client->setPutData($put_data);
 $rsp = $client->send();
 
 if($rsp->isSuccess()){

@@ -5,8 +5,7 @@ include 'config.php';
 $param = new \MercadoLibre\Native\QuestionList\QuestionListParameter();
 $param->seller_id = $user_id;
 $param->offset = 0;
-$param->limit = 2;
-$param->status = 'unanswered';
+$param->limit = 50;
 /**
 unanswered:The question has not been answered yet
 answered:The question was not answered
@@ -19,8 +18,10 @@ $client->setAccessToken($access_token);
 $rsp = $client->send();
 
 if($rsp->isSuccess()){
-	var_dump($rsp->questions);
-	var_dump($rsp->paging->total);
+	print_r($rsp->questions);
+	print_r($rsp->paging->total);
 } else {
 	die($rsp->msg);
 }
+
+

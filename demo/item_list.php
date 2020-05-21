@@ -12,7 +12,7 @@ $client->setAccessToken($access_token);
 $rsp = $client->send();
 
 if($rsp->isSuccess()){
-	var_dump($rsp->item_ids);
+	print_r($rsp->item_ids);
 	var_dump($rsp->paging->total);
 } else {
 	die($rsp->msg);

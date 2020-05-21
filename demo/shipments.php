@@ -3,7 +3,7 @@
 include 'config.php';
 
 $param = new \MercadoLibre\Native\Shipments\ShipmentsParameter();
-$param->shipment_id = '1225234';//from   order.shipping.id
+$param->shipment_id = '';//from   order.shipping.id
 
 $client = new \MercadoLibre\Native\Shipments\ShipmentsClient($param);
 $client->setAccessToken($access_token);
