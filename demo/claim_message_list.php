@@ -3,7 +3,7 @@
 include 'config.php';
 
 $param = new \MercadoLibre\Native\ClaimMessageList\ClaimMessageListParameter();
-$param->claim_id = '5019928447';
+$param->claim_id = '';
 
 $client = new \MercadoLibre\Native\ClaimMessageList\ClaimMessageListClient($param);
 $client->setAccessToken($access_token);
