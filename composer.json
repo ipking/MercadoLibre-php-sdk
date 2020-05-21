@@ -11,8 +11,9 @@
     "require": {
         "php": ">=5.5.0",
         "ext-curl": "*",
-        "ext-json": "*"
-    },
+        "ext-json": "*",
+	    "ext-fileinfo": "*"
+	},
     "autoload": {
         "psr-4": {
             "MercadoLibre\\": "src/"

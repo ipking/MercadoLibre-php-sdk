@@ -7,6 +7,7 @@ abstract class Client{
 	const METHOD_GET = 'GET';
 	const METHOD_POST = 'POST';
 	const METHOD_POST_FIELD = 'POST_FIELD';
+	const METHOD_POST_FILE = 'POST_FILE';
 	const METHOD_PUT = 'PUT';
 	const METHOD_DELETE = 'DELETE';
 	
@@ -66,6 +67,13 @@ abstract class Client{
 	public function setParam(Parameter $param){
 		$this->param = $param;
 		return $this;
+	}
+	
+	/**
+	 * @return \MercadoLibre\Core\Parameter
+	 */
+	public function getParam(){
+		return $this->param;
 	}
 	
 	/**
@@ -148,6 +156,9 @@ abstract class Client{
 					break;
 				case self::METHOD_POST_FIELD:
 					$this->client_response = Curl::postInField($this->url, $arr_data,$timeout,$curl_option);
+					break;
+				case self::METHOD_POST_FILE:
+					$this->client_response = Curl::postFile($this->url, $arr_data,$timeout,$curl_option);
 					break;
 				case self::METHOD_PUT:
 					$this->client_response = Curl::put($this->url, $arr_data,$timeout,$curl_option);
