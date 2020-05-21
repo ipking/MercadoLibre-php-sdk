@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeClient;
 
 class UserInfoClient extends NativeClient {
 	
-	protected $method = 'GET';
+	protected $method = self::METHOD_GET;
 	
 	public function __construct(UserInfoParameter $parameter) {
 		parent::__construct('/users/'.$parameter->user_id,$parameter);

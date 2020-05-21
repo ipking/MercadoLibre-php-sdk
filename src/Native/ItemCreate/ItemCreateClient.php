@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeClient;
 
 class ItemCreateClient extends NativeClient {
 	
-	protected $method = 'POST';
+	protected $method = self::METHOD_POST;
 	
 	public function __construct(ItemCreateParameter $parameter) {
 		parent::__construct('/items',$parameter);

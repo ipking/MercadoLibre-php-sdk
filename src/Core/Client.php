@@ -4,12 +4,23 @@ namespace MercadoLibre\Core;
 
 abstract class Client{
 	
+	const METHOD_GET = 'GET';
+	const METHOD_POST = 'POST';
+	const METHOD_POST_FIELD = 'POST_FIELD';
+	const METHOD_PUT = 'PUT';
+	const METHOD_DELETE = 'DELETE';
+	
 	public static $debug = false;
 	
 	/**
 	 * 请求方式
 	 */
-	protected $method = 'GET';
+	protected $method = self::METHOD_GET;
+	
+	/**
+	 * curl option
+	 */
+	protected $curl_option = array();
 	
 	/**
 	 * 请求地址
@@ -125,21 +136,24 @@ abstract class Client{
 		}
 		
 		try{
+			$curl_option= $this->curl_option;
+			
+			$timeout = Curl::DEFAULT_TIMEOUT;
 			switch($this->method){
-				case "GET":
-					$this->client_response = Curl::get($this->url);
+				case self::METHOD_GET:
+					$this->client_response = Curl::get($this->url,$timeout,$curl_option);
 					break;
-				case "POST":
-					$this->client_response = Curl::postInJson($this->url, $arr_data);
+				case self::METHOD_POST:
+					$this->client_response = Curl::postInJson($this->url, $arr_data,$timeout,$curl_option);
 					break;
-				case "POST_FIELD":
-					$this->client_response = Curl::postInField($this->url, $arr_data);
+				case self::METHOD_POST_FIELD:
+					$this->client_response = Curl::postInField($this->url, $arr_data,$timeout,$curl_option);
 					break;
-				case "PUT":
-					$this->client_response = Curl::put($this->url, $arr_data);
+				case self::METHOD_PUT:
+					$this->client_response = Curl::put($this->url, $arr_data,$timeout,$curl_option);
 					break;
-				case "DELETE":
-					$this->client_response = Curl::del($this->url, $arr_data);
+				case self::METHOD_DELETE:
+					$this->client_response = Curl::del($this->url,$timeout,$curl_option);
 					break;
 				default:
 					throw new \Exception('method '.$this->method.' not yet supply');

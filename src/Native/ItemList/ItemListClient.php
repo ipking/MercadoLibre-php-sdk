@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeClient;
 
 class ItemListClient extends NativeClient {
 	
-	protected $method = 'GET';
+	protected $method = self::METHOD_GET;
 	
 	public function __construct(ItemListParameter $parameter) {
 		$param = [

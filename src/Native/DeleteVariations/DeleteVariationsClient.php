@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeClient;
 
 class DeleteVariationsClient extends NativeClient {
 	
-	protected $method = 'DELETE';
+	protected $method = self::METHOD_DELETE;
 	
 	public function __construct(DeleteVariationsParameter $parameter) {
 		parent::__construct('/items/'.$parameter->item_id.'/variations/'.$parameter->variations_id,$parameter);

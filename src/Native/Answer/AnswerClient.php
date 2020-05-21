@@ -7,7 +7,7 @@ use MercadoLibre\Native\NativeClient;
 
 class AnswerClient extends NativeClient {
 	
-	protected $method = 'POST';
+	protected $method = self::METHOD_POST;
 	
 	public function __construct(AnswerParameter $parameter) {
 		parent::__construct('/answers',$parameter);

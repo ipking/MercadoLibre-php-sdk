@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeClient;
 
 class UpdateDescriptionClient extends NativeClient {
 	
-	protected $method = 'PUT';
+	protected $method = self::METHOD_PUT;
 	protected $put_data = [];
 	
 	public function __construct(UpdateDescriptionParameter $parameter) {

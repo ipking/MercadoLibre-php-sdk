@@ -7,7 +7,7 @@ use MercadoLibre\Native\NativeClient;
 
 class QuestionListClient extends NativeClient {
 	
-	protected $method = 'GET';
+	protected $method = self::METHOD_GET;
 	
 	public function __construct(QuestionListParameter $parameter) {
 		$param = [

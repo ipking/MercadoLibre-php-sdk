@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeClient;
 
 class VariationsClient extends NativeClient {
 	
-	protected $method = 'GET';
+	protected $method = self::METHOD_GET;
 	
 	public function __construct(VariationsParameter $parameter) {
 		parent::__construct('/items/'.$parameter->item_id.'/variations/'.$parameter->variation_id,$parameter);
