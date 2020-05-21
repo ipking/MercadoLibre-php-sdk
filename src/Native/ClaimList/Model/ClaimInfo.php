@@ -17,6 +17,7 @@ use MercadoLibre\Native\NativeParameter;
  * @property Player[] players
  * @property Resolution resolution
  * @property Label[] labels
+ * @property Coverage[] coverages
  * @property string site_id
  * @property string date_created
  * @property string last_updated
@@ -36,9 +37,10 @@ class ClaimInfo extends NativeParameter
 			'resource_id'  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'resource'     => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'reason_id'    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'players'      => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,Player::class],
-			'resolution'   => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL,Resolution::class],
-			'labels'       => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,Label::class],
+			'players'      => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Player::class],
+			'resolution'   => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL, Resolution::class],
+			'labels'       => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Label::class],
+			'coverages'    => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Coverage::class],
 			'site_id'      => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'date_created' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'last_updated' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
