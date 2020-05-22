@@ -24,6 +24,15 @@ use MercadoLibre\Native\NativeParameter;
  */
 class ClaimInfo extends NativeParameter
 {
+	/**
+	complainant: person who starts the claim.
+	respondent: person the claim is filed against.
+	mediator: Person who intervenes to help solve the problem
+	 */
+	const ROLE_COMPLAINANT = 'complainant';
+	const ROLE_RESPONDENT = 'respondent';
+	const ROLE_MEDIATOR = 'mediator';
+	
 	public function __construct($data = [])
 	{
 		
