@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\Native\GetMessageAttachment\GetMessageAttachmentParameter();
+$param = new \MercadoLibre\Native\MessageAttachment\MessageAttachmentParameter();
 $param->attachment_id = "";
 
-$client = new \MercadoLibre\Native\GetMessageAttachment\GetMessageAttachmentClient($param);
+$client = new \MercadoLibre\Native\MessageAttachment\MessageAttachmentClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

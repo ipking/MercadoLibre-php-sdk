@@ -1,14 +1,14 @@
 <?php
 
 
-namespace MercadoLibre\Native\GetMessageAttachment;
+namespace MercadoLibre\Native\MessageAttachment;
 
 use MercadoLibre\Native\NativeParameter;
 
 /**
  * @property String attachment_id
  */
-class GetMessageAttachmentParameter extends NativeParameter
+class MessageAttachmentParameter extends NativeParameter
 {
 	public function __construct($data = [])
 	{

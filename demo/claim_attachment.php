@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\Native\GetClaimAttachment\GetClaimAttachmentParameter();
+$param = new \MercadoLibre\Native\ClaimAttachment\ClaimAttachmentParameter();
 $param->claim_id = "";
 $param->attach_id = "";
 
-$client = new \MercadoLibre\Native\GetClaimAttachment\GetClaimAttachmentClient($param);
+$client = new \MercadoLibre\Native\ClaimAttachment\ClaimAttachmentClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

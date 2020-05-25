@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MercadoLibre\Native\GetMessageAttachment;
+namespace MercadoLibre\Native\MessageAttachment;
 
 use MercadoLibre\Native\NativeErrorMsg;
 use MercadoLibre\Native\NativeResponse;
@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeResponse;
 /**
  * @property string id
  */
-class GetMessageAttachmentResponse extends NativeResponse{
+class MessageAttachmentResponse extends NativeResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = NativeErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
