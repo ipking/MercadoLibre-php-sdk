@@ -2,10 +2,13 @@
 
 include 'config.php';
 
+/**
+ * @url https://developers.mercadolibre.com.mx/en_us/working-with-claims#Uploading-proof-of-shipping
+ */
 $param = new \MercadoLibre\Native\ClaimEvidence\ClaimEvidenceParameter();
 $param->claim_id = '1221';
 $param->type = 'shipping_evidence'; //shipping_evidence or handling_shipping_evidence
-$param->shipping_method = 'mail'; //mail  personal_delivery   email  
+$param->shipping_method = 'mail'; //mail  personal_delivery   email
 
 $client = new \MercadoLibre\Native\ClaimEvidence\ClaimEvidenceClient($param);
 $client->setAccessToken($access_token);
