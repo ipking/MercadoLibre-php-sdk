@@ -3,14 +3,14 @@
  * 产品描述的参数
  */
 
-namespace MercadoLibre\Native\UpdateDescription;
+namespace MercadoLibre\Native\ItemUpdateDescription;
 
 use MercadoLibre\Native\NativeParameter;
 
 /**
  * @property String item_id
  */
-class UpdateDescriptionParameter extends NativeParameter
+class ItemUpdateDescriptionParameter extends NativeParameter
 {
 	public function __construct($data = [])
 	{

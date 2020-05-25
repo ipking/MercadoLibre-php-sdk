@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\Native\UploadClaimAttachment\UploadClaimAttachmentParameter();
+$param = new \MercadoLibre\Native\ClaimUploadAttachment\ClaimUploadAttachmentParameter();
 $param->claim_id = "";
 $param->file = "H:/1.png";
 
-$client = new \MercadoLibre\Native\UploadClaimAttachment\UploadClaimAttachmentClient($param);
+$client = new \MercadoLibre\Native\ClaimUploadAttachment\ClaimUploadAttachmentClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

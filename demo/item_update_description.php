@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\Native\UpdateDescription\UpdateDescriptionParameter();
+$param = new \MercadoLibre\Native\ItemUpdateDescription\ItemUpdateDescriptionParameter();
 $param->item_id = '';
 
-$client = new \MercadoLibre\Native\UpdateDescription\UpdateDescriptionClient($param);
+$client = new \MercadoLibre\Native\ItemUpdateDescription\ItemUpdateDescriptionClient($param);
 $client->setAccessToken($access_token);
 
 $json =<<<EOL

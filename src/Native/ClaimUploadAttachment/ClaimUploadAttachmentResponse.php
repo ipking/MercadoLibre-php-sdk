@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MercadoLibre\Native\UploadClaimAttachment;
+namespace MercadoLibre\Native\ClaimUploadAttachment;
 
 use MercadoLibre\Native\NativeErrorMsg;
 use MercadoLibre\Native\NativeResponse;
@@ -11,7 +11,7 @@ use MercadoLibre\Native\NativeResponse;
  * @property string filename
  * @property string render_url
  */
-class UploadClaimAttachmentResponse extends NativeResponse{
+class ClaimUploadAttachmentResponse extends NativeResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = NativeErrorMsg::getMsg($errors);
 		$msg and $message = $msg;

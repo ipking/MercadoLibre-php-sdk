@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MercadoLibre\Native\UploadClaimAttachment;
+namespace MercadoLibre\Native\ClaimUploadAttachment;
 
 use MercadoLibre\Native\NativeParameter;
 
@@ -9,7 +9,7 @@ use MercadoLibre\Native\NativeParameter;
  * @property String claim_id
  * @property String file
  */
-class UploadClaimAttachmentParameter extends NativeParameter
+class ClaimUploadAttachmentParameter extends NativeParameter
 {
 	public function __construct($data = [])
 	{

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace MercadoLibre\Native\UploadClaimAttachment;
+namespace MercadoLibre\Native\MessageUploadAttachment;
 
 use finfo;
 use MercadoLibre\Core\Response;
 use MercadoLibre\Native\NativeClient;
 
-class UploadClaimAttachmentClient extends NativeClient {
+class MessageUploadAttachmentClient extends NativeClient {
 	
 	protected $method = self::METHOD_POST_FILE;
 	protected $curl_option = array(
@@ -16,14 +16,14 @@ class UploadClaimAttachmentClient extends NativeClient {
 		)
 	);
 	
-	public function __construct(UploadClaimAttachmentParameter $parameter) {
-		parent::__construct('/v1/claims/'.$parameter->claim_id.'/attachments',$parameter);
+	public function __construct(MessageUploadAttachmentParameter $parameter) {
+		parent::__construct('/messages/attachments',$parameter);
 	}
 
 	public function send() {
 		$param = $this->getParam();
 		/**
-		 * @var UploadClaimAttachmentParameter $param
+		 * @var MessageUploadAttachmentParameter $param
 		 */
 		$file = $param->file;
 		
@@ -34,7 +34,7 @@ class UploadClaimAttachmentClient extends NativeClient {
 		
 		$rsp_data = $this->sendData(['file'=>$cfile]);
 		
-		return new UploadClaimAttachmentResponse(
+		return new MessageUploadAttachmentResponse(
 			$rsp_data['message']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['message']?$rsp_data['message']:'success',
