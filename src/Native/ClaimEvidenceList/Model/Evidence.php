@@ -16,6 +16,7 @@ use MercadoLibre\Native\NativeParameter;
  * @property string tracking_number
  * @property string type
  * @property Attachment[] attachments
+ * @property string handling_date
  */
 class Evidence extends NativeParameter
 {
@@ -33,7 +34,8 @@ class Evidence extends NativeParameter
 			'shipping_method'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'tracking_number'       => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'type'                  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
-			'attachments'           => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,Attachment::class],
+			'attachments'           => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Attachment::class],
+			'handling_date'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 		));
 	}
 }
