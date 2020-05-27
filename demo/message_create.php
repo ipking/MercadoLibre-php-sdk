@@ -2,30 +2,25 @@
 
 include 'config.php';
 
+$from = new \MercadoLibre\Native\MessageCreate\Model\From();
+$from->user_id = $user_id;
+$from->email = $user_email;
+$to = new \MercadoLibre\Native\MessageCreate\Model\To();
+$to->user_id = $buyer_id;
+
 $param = new \MercadoLibre\Native\MessageCreate\MessageCreateParameter();
 $param->pack_id = "";
 $param->seller_id = $user_id;
+$param->from = $from;
+$param->to = $to;
+$param->text = '3q';
+$param->attachments = [
+	'1.png'
+];
 
 $client = new \MercadoLibre\Native\MessageCreate\MessageCreateClient($param);
 $client->setAccessToken($access_token);
 
-$post_data = [
-	"from"        => [
-		"user_id" => $user_id,
-		"email"   => $user_email,
-	],
-	"to"          => [
-		"user_id" => $buyer_id,
-	],
-	"text"        => '3q',
-	"attachments" => [
-		''
-	],
-];
-
-
-
-$client->setPostData($post_data);
 
 $rsp = $client->send();
 
