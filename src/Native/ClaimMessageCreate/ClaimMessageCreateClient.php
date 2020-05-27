@@ -8,18 +8,17 @@ use MercadoLibre\Native\NativeClient;
 class ClaimMessageCreateClient extends NativeClient {
 	
 	protected $method = self::METHOD_POST;
-	protected $post_data = [];
 	
 	public function __construct(ClaimMessageCreateParameter $parameter) {
 		parent::__construct('/v1/claims/'.$parameter->claim_id.'/messages',$parameter);
 	}
 	
-	public function setPostData($post_data) {
-		$this->post_data = $post_data;
-	}
-	
 	public function send() {
-		$rsp_data = parent::sendData($this->post_data);
+		//校验数据
+		$this->param->validateAll();
+		$arr_data = $this->param->getDataAsArray($this->param->getDefines());
+		unset($arr_data['claim_id']);
+		$rsp_data = parent::sendData($arr_data);
 		
 		return new ClaimMessageCreateResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
