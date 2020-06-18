@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string last_name
  * @property string email
  * @property Phone phone
- * @property Phone alterNativeSelling_phone
+ * @property Phone alternative_phone
  */
 class Buyer extends NativeSellingParameter
 {
@@ -24,7 +24,7 @@ class Buyer extends NativeSellingParameter
 			'last_name'         => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'email'             => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
 			'phone'             => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL, Phone::class],
-			'alterNativeSelling_phone' => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL, Phone::class],
+			'alternative_phone' => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL, Phone::class],
 		));
 	}
 }

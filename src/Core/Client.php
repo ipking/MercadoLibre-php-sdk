@@ -13,6 +13,8 @@ abstract class Client{
 	
 	public static $debug = false;
 	
+	protected static $callback;
+	
 	/**
 	 * 请求方式
 	 */
@@ -37,8 +39,6 @@ abstract class Client{
 	
 	/** @var string $client_response */
 	protected $client_response;
-	
-	protected static $callback;
 	
 	/**
 	 * 通过OAuth授权方式获得

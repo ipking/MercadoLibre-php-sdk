@@ -8,7 +8,6 @@ namespace MercadoLibre\GlobalSelling\Auth;
 
 use MercadoLibre\Core\Client;
 use MercadoLibre\Core\Response;
-use MercadoLibre\GlobalSelling\Model\SiteEnum;
 
 class AuthClient extends Client{
 	
@@ -31,10 +30,9 @@ class AuthClient extends Client{
 		$this->client_secret = $client_secret;
 	}
 	
-	public function getAuthUrl($redirect_uri, $site_id) {
-		$auth_url = SiteEnum::$AUTH_URL[$site_id];
+	public function getAuthUrl($redirect_uri) {
 		$params = array("client_id" => $this->client_id, "response_type" => "code", "redirect_uri" => $redirect_uri);
-		$auth_uri = $auth_url."/authorization?".http_build_query($params);
+		$auth_uri = "https://global-selling.mercadolibre.com/authorization?".http_build_query($params);
 		return $auth_uri;
 	}
 	
