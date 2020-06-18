@@ -1,7 +1,7 @@
 <?php
 
 
-$re = json_decode(file_get_contents('https://api.mercadolibre.com/sites/MLA/listing_types'),1);
+$re = json_decode(file_get_contents('https://api.mercadolibre.com/sites/CBT/listing_types'),1);
 $const = '';
 $static = '';
 foreach($re as $item){

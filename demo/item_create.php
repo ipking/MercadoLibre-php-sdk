@@ -12,15 +12,16 @@ include 'config.php';
 
 $param = new \MercadoLibre\NativeSelling\ItemCreate\ItemCreateParameter();
 $param->condition = ConditionEnum::CONDITION_NEW;
-$param->currency_id = CurrencyEnum::CURRENCY_MXN;
+$param->currency_id = CurrencyEnum::CURRENCY_USD;
 $param->accepts_mercadopago = true;
-$param->description = 'Lindo Ray_Ban_Original_Wayfarer';
-$param->listing_type_id = ListingTypesEnum::TYPE_BRONZE;
-$param->title = 'Audifonos Manos Libre Bluetooth';
+$param->description = 'test';
+$param->listing_type_id = ListingTypesEnum::TYPE_GOLD_PRO;
+$param->title = 'test';
+$param->site_id = 'CBT';
 $param->available_quantity = '1';
 $param->price = '1000';
 $param->buying_mode = 'buy_it_now';
-$param->category_id = 'MLM7533';
+$param->category_id = 'CBT1064';
 $pics = [
 	'https://mlm-s1-p.mlstatic.com/62.jpg',
 	'https://mlm-s1-p.mlstatic.com/82.jpg',
@@ -44,7 +45,7 @@ $attrs = [
 	],
 	[
 		'id'=>'COLOR',
-		'value_id'=>'52049',
+		'value_name'=>'Golden',
 	],
 ];
 $attr = [];

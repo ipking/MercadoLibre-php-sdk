@@ -16,6 +16,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String condition
  * @property String currency_id
  * @property bool accepts_mercadopago
+ * @property String site_id
  * @property String description
  * @property String listing_type_id
  * @property String title
@@ -36,6 +37,7 @@ class ItemCreateParameter extends NativeSellingParameter
 			'condition'           => [self::PARAM_TYPE_ENUM, self::PARAM_REQUIRED, ConditionEnum::class],
 			'currency_id'         => [self::PARAM_TYPE_ENUM, self::PARAM_REQUIRED, CurrencyEnum::class],
 			'accepts_mercadopago' => [self::PARAM_TYPE_BOOL, self::PARAM_REQUIRED],
+			'site_id'             => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
 			'description'         => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
 			'listing_type_id'     => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
 			'title'               => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],

@@ -1,18 +1,18 @@
 <?php
 /**
- * 产品描述
+ * 获取用户能发布的站点
  */
 
-namespace MercadoLibre\GlobalSelling\ItemUpdateDescription;
+namespace MercadoLibre\GlobalSelling\ItemsPost;
 use MercadoLibre\Core\Response;
-use MercadoLibre\GlobalSelling\GlobalSellingClient;
+use MercadoLibre\NativeSelling\NativeSellingClient;
 
-class ItemUpdateDescriptionClient extends GlobalSellingClient {
+class ItemsPostClient extends NativeSellingClient {
 	
-	protected $method = self::METHOD_PUT;
+	protected $method = self::METHOD_POST;
 	
-	public function __construct(ItemUpdateDescriptionParameter $parameter) {
-		parent::__construct('/items/'.$parameter->item_id.'/description',$parameter);
+	public function __construct(ItemsPostParameter $parameter) {
+		parent::__construct('/marketplace/items/'.$parameter->item_id,$parameter);
 	}
 	
 
@@ -22,7 +22,7 @@ class ItemUpdateDescriptionClient extends GlobalSellingClient {
 		$arr_data = $this->param->getDataAsArray($this->param->getDefines());
 		unset($arr_data['item_id']);
 		$rsp_data = parent::sendData($arr_data);
-		return new ItemUpdateDescriptionResponse(
+		return new ItemsPostResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['error']?$rsp_data['message']:'success',
