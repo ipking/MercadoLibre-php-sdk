@@ -1,0 +1,23 @@
+<?php
+
+namespace MercadoLibre\GlobalSelling\MessageList\Model;
+
+
+use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+/**
+ * @property string user_id
+ * @property string email
+ * @property string name
+ */
+class To extends GlobalSellingParameter
+{
+	public function __construct($data = [])
+	{
+		
+		parent::__construct($data, array(
+			'user_id' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'email'   => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'name'    => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+		));
+	}
+}
