@@ -1,9 +1,9 @@
 <?php
 
-use MercadoLibre\NativeSelling\ItemCreate\Model\AttributesParameter;
+use MercadoLibre\NativeSelling\ItemCreate\Model\Attribute;
 use MercadoLibre\NativeSelling\ItemCreate\Model\ConditionEnum;
-use MercadoLibre\NativeSelling\ItemCreate\Model\PicturesParameter;
-use MercadoLibre\NativeSelling\ItemCreate\Model\VariationsParameter;
+use MercadoLibre\NativeSelling\ItemCreate\Model\Picture;
+use MercadoLibre\NativeSelling\ItemCreate\Model\Variation;
 use MercadoLibre\NativeSelling\Model\CurrencyEnum;
 use MercadoLibre\NativeSelling\Model\ListingTypesEnum;
 
@@ -28,7 +28,7 @@ $pics = [
 ];
 $ps = [];
 foreach($pics as $pic){
-	$p = new PicturesParameter();
+	$p = new Picture();
 	$p->source = $pic;
 	$ps[] = $p;
 }
@@ -51,21 +51,21 @@ $attrs = [
 $attr = [];
 
 $a = $attrs[0];
-$p = new AttributesParameter();
+$p = new Attribute();
 $p->id = $a['id'];
 $p->value_id = $a['value_id'];
 $p->value_name = $a['value_name'];
 $attr[] = $p;
 
 $a = $attrs[1];
-$p = new AttributesParameter();
+$p = new Attribute();
 $p->id = $a['id'];
 $p->value_id = $a['value_id'];
 $p->value_name = $a['value_name'];
 $attr[] = $p;
 
 $a = $attrs[2];
-$p = new AttributesParameter();
+$p = new Attribute();
 $p->id = $a['id'];
 $p->value_id = $a['value_id'];
 $p->value_name = $a['value_name'];
@@ -73,7 +73,7 @@ $p->value_name = $a['value_name'];
 
 $param->attributes = $attr;
 
-$variations = new VariationsParameter();
+$variations = new Variation();
 $variations->available_quantity = 1;
 $variations->price = 1000;
 $variations->seller_custom_field = 'sku001';
@@ -82,7 +82,12 @@ $variations->picture_ids = $pics;
 
 $param->variations = [$variations];
 
-$param->warranty = '12 months';
+$param->warranty = '';
+
+$sale_term = new \MercadoLibre\NativeSelling\ItemCreate\Model\SaleTerm();
+$sale_term->id = 'WARRANTY_TYPE';
+$sale_term->value_name = 'No warranty';
+$param->sale_terms = [$sale_term];
 
 $client = new \MercadoLibre\NativeSelling\ItemCreate\ItemCreateClient($param);
 $client->setAccessToken($access_token);

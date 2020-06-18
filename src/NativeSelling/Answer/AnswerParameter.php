@@ -3,10 +3,10 @@
 
 namespace MercadoLibre\NativeSelling\Answer;
 
-use MercadoLibre\NativeSelling\ItemCreate\Model\AttributesParameter;
+use MercadoLibre\NativeSelling\ItemCreate\Model\Attribute;
 use MercadoLibre\NativeSelling\ItemCreate\Model\ConditionEnum;
-use MercadoLibre\NativeSelling\ItemCreate\Model\PicturesParameter;
-use MercadoLibre\NativeSelling\ItemCreate\Model\VariationsParameter;
+use MercadoLibre\NativeSelling\ItemCreate\Model\Picture;
+use MercadoLibre\NativeSelling\ItemCreate\Model\Variation;
 use MercadoLibre\NativeSelling\Model\CurrencyEnum;
 use MercadoLibre\NativeSelling\NativeSellingParameter;
 

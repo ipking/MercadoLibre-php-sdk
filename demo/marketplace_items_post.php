@@ -6,7 +6,7 @@ use MercadoLibre\GlobalSelling\ItemsPost\ItemsPostParameter;
 include 'config.php';
 
 $param = new ItemsPostParameter();
-$param->item_id = 'CBT93';
+$param->item_id = 'CBT9';
 
 $sites = [
 	'MLM',

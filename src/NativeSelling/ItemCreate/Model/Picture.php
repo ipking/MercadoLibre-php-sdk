@@ -7,7 +7,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
 /**
  * @property string source 图片地址
  */
-class PicturesParameter extends NativeSellingParameter
+class Picture extends NativeSellingParameter
 {
 	public function __construct($data = [])
 	{

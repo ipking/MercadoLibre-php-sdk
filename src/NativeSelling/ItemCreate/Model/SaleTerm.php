@@ -2,14 +2,14 @@
 
 namespace MercadoLibre\NativeSelling\ItemCreate\Model;
 
-
 use MercadoLibre\NativeSelling\NativeSellingParameter;
+
 /**
  * @property string id
  * @property string value_id
  * @property string value_name
  */
-class AttributesParameter extends NativeSellingParameter
+class SaleTerm extends NativeSellingParameter
 {
 	public function __construct($data = [])
 	{
