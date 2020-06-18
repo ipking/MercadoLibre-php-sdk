@@ -21,7 +21,7 @@ class SiteEnum{
 	public static $NAME_MAP = array(
 		self::SITE_CBT  => '国际站',
 		self::SITE_MLA  => '阿根廷',
-		self::SITE_MLB  => '布拉西尔',
+		self::SITE_MLB  => '巴西',
 		self::SITE_MCO  => '哥伦比亚',
 		self::SITE_MCR  => '哥斯达黎加',
 		self::SITE_MEC  => '厄瓜多尔',
