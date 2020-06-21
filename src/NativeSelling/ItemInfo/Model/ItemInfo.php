@@ -51,6 +51,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property Picture[] pictures
  * @property Attribute[] attributes
  * @property Variation[] variations
+ * @property SaleTerm[] sale_terms
  */
 class ItemInfo extends NativeSellingParameter
 {
@@ -103,7 +104,7 @@ class ItemInfo extends NativeSellingParameter
 			'pictures'                    => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Picture::class],
 			'attributes'                  => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Attribute::class],
 			'variations'                  => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Variation::class],
-			'sale_terms'                    => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,SaleTerm::class],
+			'sale_terms'                  => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,SaleTerm::class],
 		));
 	}
 }
