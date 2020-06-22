@@ -2,7 +2,6 @@
 
 namespace MercadoLibre\GlobalSelling\QuestionsSearchGet\Model;
 
-
 use MercadoLibre\GlobalSelling\GlobalSellingParameter;
 
 /**

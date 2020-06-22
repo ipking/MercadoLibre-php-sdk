@@ -20,7 +20,14 @@ class QuestionsSearchGetClient extends GlobalSellingClient {
 	}
 
 	public function send() {
-		$rsp_data = parent::send();
+		//校验数据
+		$this->param->validateAll();
+		$arr_data = $this->param->getDataAsArray($this->param->getDefines());
+		unset($arr_data['offset']);
+		unset($arr_data['limit']);
+		unset($arr_data['seller_id']);
+		unset($arr_data['status']);
+		$rsp_data = parent::sendData($arr_data);
 		return new QuestionsSearchGetResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
