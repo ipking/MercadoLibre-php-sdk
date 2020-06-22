@@ -5,7 +5,7 @@ include 'config.php';
 $param = new \MercadoLibre\NativeSelling\ItemsSearchGet\ItemsSearchGetParameter();
 $param->seller_id = $user_id;
 $param->offset = 0;
-$param->limit = 2;
+$param->limit = 20;
 
 $client = new \MercadoLibre\NativeSelling\ItemsSearchGet\ItemsSearchGetClient($param);
 $client->setAccessToken($access_token);

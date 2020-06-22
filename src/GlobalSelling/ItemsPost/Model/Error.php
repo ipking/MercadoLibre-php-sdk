@@ -2,14 +2,14 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\GlobalSelling\GlobalSellingParameter;
 
 /**
  * @property string message
  * @property string error
  * @property string status
  */
-class Error extends NativeSellingParameter
+class Error extends GlobalSellingParameter
 {
 	public function __construct($data = [])
 	{

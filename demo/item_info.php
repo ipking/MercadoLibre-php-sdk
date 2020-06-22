@@ -3,7 +3,7 @@
 include 'config.php';
 
 $param = new \MercadoLibre\NativeSelling\ItemsGet\ItemsGetParameter();
-$param->item_id = 'MLM787615205';
+$param->item_id = '';
 
 $client = new \MercadoLibre\NativeSelling\ItemsGet\ItemsGetClient($param);
 $client->setAccessToken($access_token);

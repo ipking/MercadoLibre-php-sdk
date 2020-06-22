@@ -176,9 +176,9 @@ abstract class Client{
 		
 		
 		if(self::$debug){
-			echo "\n============== RSP =================\n";
+			echo "\n=============== RSP ================\n";
 			echo $this->client_response;
-			echo "\n============== RSP =================\n";
+			echo "\n=============== RSP ================\n";
 		}
 		
 		if(is_callable(self::$callback)){

@@ -2,14 +2,14 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\GlobalSelling\GlobalSellingParameter;
 
 /**
  * @property string price
  * @property string logistic_type
  * @property string site_id
  */
-class Config extends NativeSellingParameter
+class Config extends GlobalSellingParameter
 {
 	public function __construct($data = [])
 	{

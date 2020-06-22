@@ -2,17 +2,17 @@
 namespace MercadoLibre\GlobalSelling\UsersGet;
 
 use MercadoLibre\GlobalSelling\UsersGet\Model\Marketplace;
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\GlobalSelling\GlobalSellingErrorMsg;
+use MercadoLibre\GlobalSelling\GlobalSellingResponse;
 
 /**
  * @property string user_id
  * @property string site_id
  * @property Marketplace[] marketplaces
  */
-class UsersGetResponse extends NativeSellingResponse{
+class UsersGetResponse extends GlobalSellingResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = GlobalSellingErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'user_id'      => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

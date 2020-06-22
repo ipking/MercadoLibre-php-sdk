@@ -1,19 +1,22 @@
 <?php
-namespace MercadoLibre\GlobalSelling\ItemsPost;
+/**
+ * 产品信息的响应
+ */
 
-use MercadoLibre\GlobalSelling\ItemsPost\Model\Item;
+namespace MercadoLibre\GlobalSelling\ItemsGet;
+use MercadoLibre\GlobalSelling\ItemsGet\Model\ItemInfo;
 use MercadoLibre\GlobalSelling\GlobalSellingErrorMsg;
 use MercadoLibre\GlobalSelling\GlobalSellingResponse;
 
 /**
- * @property Item[] items
+ * @property ItemInfo item
  */
-class ItemsPostResponse extends GlobalSellingResponse{
+class ItemsGetResponse extends GlobalSellingResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = GlobalSellingErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
-			'items' => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, Item::class],
+			'item'   => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL,ItemInfo::class],
 		));
 	}
 }

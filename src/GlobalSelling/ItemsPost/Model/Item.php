@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\GlobalSelling\GlobalSellingParameter;
 
 /**
  * @property string item_id
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string site_id
  * @property Error[] errors
  */
-class Item extends NativeSellingParameter
+class Item extends GlobalSellingParameter
 {
 	public function __construct($data = [])
 	{
