@@ -1,11 +1,11 @@
 <?php
 
-namespace MercadoLibre\NativeSelling\QuestionsSearchGet;
+namespace MercadoLibre\GlobalSelling\QuestionsSearchGet;
 
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\GlobalSelling\GlobalSellingClient;
 
-class QuestionsSearchGetClient extends NativeSellingClient {
+class QuestionsSearchGetClient extends GlobalSellingClient {
 	
 	protected $method = self::METHOD_GET;
 	
@@ -16,12 +16,11 @@ class QuestionsSearchGetClient extends NativeSellingClient {
 			'seller_id'    => $parameter->seller_id,
 			'status'       => $parameter->status,
 		];
-		parent::__construct('/questions/search?'.http_build_query($param),$parameter);
+		parent::__construct('/marketplace/questions/search?'.http_build_query($param),$parameter);
 	}
 
 	public function send() {
 		$rsp_data = parent::send();
-		$rsp_data['questions']=$rsp_data['results'];
 		return new QuestionsSearchGetResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
