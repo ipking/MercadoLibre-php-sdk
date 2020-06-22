@@ -1,19 +1,20 @@
 <?php
 /**
- * 产品信息
+ * 获取用户能发布的站点
  */
 
-namespace MercadoLibre\GlobalSelling\ItemsGet;
+namespace MercadoLibre\GlobalSelling\ItemsPut;
 use MercadoLibre\Core\Response;
 use MercadoLibre\GlobalSelling\GlobalSellingClient;
 
-class ItemsGetClient extends GlobalSellingClient {
+class ItemsPutClient extends GlobalSellingClient {
 	
-	protected $method = self::METHOD_GET;
+	protected $method = self::METHOD_PUT;
 	
-	public function __construct(ItemsGetParameter $parameter) {
+	public function __construct(ItemsPutParameter $parameter) {
 		parent::__construct('/marketplace/items/'.$parameter->item_id,$parameter);
 	}
+	
 
 	public function send() {
 		//校验数据
@@ -21,7 +22,7 @@ class ItemsGetClient extends GlobalSellingClient {
 		$arr_data = $this->param->getDataAsArray($this->param->getDefines());
 		unset($arr_data['item_id']);
 		$rsp_data = parent::sendData($arr_data);
-		return new ItemsGetResponse(
+		return new ItemsPutResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['error']?$rsp_data['message']:'success',
