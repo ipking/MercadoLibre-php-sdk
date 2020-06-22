@@ -11,6 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string value_name
  * @property array value_struct
  */
+
 class SaleTerm extends NativeSellingParameter
 {
 	public function __construct($data = [])
