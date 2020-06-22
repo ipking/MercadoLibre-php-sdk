@@ -1,6 +1,6 @@
 <?php
 
-namespace MercadoLibre\GlobalSelling\ItemsPut\Model;
+namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
 use MercadoLibre\GlobalSelling\GlobalSellingParameter;
 

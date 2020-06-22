@@ -10,7 +10,7 @@ $param->item_id = '';
 $param->site_id = 'MLM';
 $param->logistic_type = 'remote';
 
-$description = new \MercadoLibre\GlobalSelling\ItemsPut\Model\Description();
+$description = new \MercadoLibre\GlobalSelling\ItemsPost\Model\Description();
 $description->plain_text = 'test';
 $param->description = $description;
 
