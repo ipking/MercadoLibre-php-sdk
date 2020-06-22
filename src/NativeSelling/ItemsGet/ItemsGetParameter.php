@@ -5,12 +5,12 @@
 
 namespace MercadoLibre\NativeSelling\ItemsGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String item_id
  */
-class ItemsGetParameter extends NativeSellingParameter
+class ItemsGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

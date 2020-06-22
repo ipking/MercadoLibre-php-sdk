@@ -5,9 +5,9 @@
 
 namespace MercadoLibre\NativeSelling\OrdersSearchGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class OrdersSearchGetClient extends NativeSellingClient {
+class OrdersSearchGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

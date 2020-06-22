@@ -3,17 +3,17 @@
 
 namespace MercadoLibre\NativeSelling\MessagesPacksGet;
 use MercadoLibre\NativeSelling\MessagesPacksGet\Model\MessageInfo;
-use MercadoLibre\NativeSelling\Model\Paging;
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\Base\Model\Paging;
+use MercadoLibre\Base\BaseErrorMsg;
+use MercadoLibre\Base\BaseResponse;
 
 /**
  * @property MessageInfo[] messages
  * @property Paging paging
  */
-class MessagesPacksGetResponse extends NativeSellingResponse{
+class MessagesPacksGetResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'messages' => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, MessageInfo::class],

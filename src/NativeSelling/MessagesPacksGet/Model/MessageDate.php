@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\MessagesPacksGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string received
@@ -12,7 +12,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string created
  * @property string read
  */
-class MessageDate extends NativeSellingParameter
+class MessageDate extends BaseParameter
 {
 	public function __construct($data = [])
 	{

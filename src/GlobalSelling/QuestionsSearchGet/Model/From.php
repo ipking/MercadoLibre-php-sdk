@@ -3,13 +3,13 @@
 namespace MercadoLibre\GlobalSelling\QuestionsSearchGet\Model;
 
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string answered_questions
  * @property string id
  */
-class From extends GlobalSellingParameter
+class From extends BaseParameter
 {
 	public function __construct($data = [])
 	{

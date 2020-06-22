@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsPut;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ClaimsPutClient extends NativeSellingClient {
+class ClaimsPutClient extends BaseClient {
 	
 	protected $method = self::METHOD_PUT;
 	

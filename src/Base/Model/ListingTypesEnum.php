@@ -1,6 +1,6 @@
 <?php
 
-namespace MercadoLibre\NativeSelling\Model;
+namespace MercadoLibre\Base\Model;
 
 class ListingTypesEnum{
 	const TYPE_GOLD_PRO = 'gold_pro';

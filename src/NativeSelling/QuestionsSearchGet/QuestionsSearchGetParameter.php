@@ -3,7 +3,7 @@
 
 namespace MercadoLibre\NativeSelling\QuestionsSearchGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String seller_id
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String limit
  * @property String status
  */
-class QuestionsSearchGetParameter extends NativeSellingParameter
+class QuestionsSearchGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\OrdersSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string seller_custom_field
  * @property string category_id
  */
-class Item extends NativeSellingParameter
+class Item extends BaseParameter
 {
 	public function __construct($data = [])
 	{

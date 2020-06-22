@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string reason
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property array benefited
  * @property string closed_by
  */
-class Resolution extends NativeSellingParameter
+class Resolution extends BaseParameter
 {
 	public function __construct($data = [])
 	{

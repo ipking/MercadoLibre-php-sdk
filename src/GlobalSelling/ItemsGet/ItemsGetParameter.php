@@ -5,12 +5,12 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsGet;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String item_id
  */
-class ItemsGetParameter extends GlobalSellingParameter
+class ItemsGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

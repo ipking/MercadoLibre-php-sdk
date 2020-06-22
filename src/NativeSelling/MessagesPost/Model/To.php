@@ -3,12 +3,12 @@
 namespace MercadoLibre\NativeSelling\MessagesPost\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string user_id
  */
-class To extends NativeSellingParameter
+class To extends BaseParameter
 {
 	public function __construct($data = [])
 	{

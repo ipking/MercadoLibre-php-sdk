@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ClaimsSearchGetClient extends NativeSellingClient {
+class ClaimsSearchGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

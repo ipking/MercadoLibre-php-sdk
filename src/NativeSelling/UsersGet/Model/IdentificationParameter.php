@@ -3,13 +3,13 @@
 namespace MercadoLibre\NativeSelling\UsersGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string type
  * @property string number
  */
-class IdentificationParameter extends NativeSellingParameter
+class IdentificationParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

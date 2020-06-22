@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\MessagesPacksGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -20,7 +20,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property MessageResource[] message_resources
  * @property string conversation_first_message
  */
-class MessageInfo extends NativeSellingParameter
+class MessageInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,13 +3,13 @@
 
 namespace MercadoLibre\NativeSelling\AnswersPost;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String question_id
  * @property String text
  */
-class AnswersPostParameter extends NativeSellingParameter
+class AnswersPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

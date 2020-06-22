@@ -5,15 +5,15 @@
 
 namespace MercadoLibre\NativeSelling\ItemsGet;
 use MercadoLibre\NativeSelling\ItemsGet\Model\ItemInfo;
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\Base\BaseErrorMsg;
+use MercadoLibre\Base\BaseResponse;
 
 /**
  * @property ItemInfo item
  */
-class ItemsGetResponse extends NativeSellingResponse{
+class ItemsGetResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'item'   => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL,ItemInfo::class],

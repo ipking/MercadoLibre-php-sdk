@@ -3,7 +3,7 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsEvidencesPost;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String claim_id
@@ -20,7 +20,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String type
  * @property String handling_date
  */
-class ClaimsEvidencesPostParameter extends NativeSellingParameter
+class ClaimsEvidencesPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

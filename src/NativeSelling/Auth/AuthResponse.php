@@ -2,8 +2,8 @@
 
 
 namespace MercadoLibre\NativeSelling\Auth;
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\Base\BaseErrorMsg;
+use MercadoLibre\Base\BaseResponse;
 
 /**
  * @property string access_token
@@ -13,9 +13,9 @@ use MercadoLibre\NativeSelling\NativeSellingResponse;
  * @property string user_id
  * @property string refresh_token
  */
-class AuthResponse extends NativeSellingResponse{
+class AuthResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'access_token'  => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

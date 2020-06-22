@@ -3,7 +3,7 @@
 
 namespace MercadoLibre\NativeSelling\ShipmentsPut;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String shipment_id
@@ -12,7 +12,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String tracking_number
  * @property String receiver_id
  */
-class ShipmentsPutParameter extends NativeSellingParameter
+class ShipmentsPutParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsExpectedResolutionsGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string player_role
@@ -13,7 +13,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string last_updated
  * @property string status
  */
-class ExpectedResolution extends NativeSellingParameter
+class ExpectedResolution extends BaseParameter
 {
 	/**
 	- refund: the player expects a money refund

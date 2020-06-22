@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\GlobalSelling\QuestionsSearchGet\Model;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string date_created
@@ -16,7 +16,7 @@ use MercadoLibre\GlobalSelling\GlobalSellingParameter;
  * @property Answer answer
  * @property From from
  */
-class QuestionInfo extends GlobalSellingParameter
+class QuestionInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{

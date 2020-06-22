@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ItemsGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -13,7 +13,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string max_size
  * @property string quality
  */
-class Picture extends NativeSellingParameter
+class Picture extends BaseParameter
 {
 	public function __construct($data = [])
 	{

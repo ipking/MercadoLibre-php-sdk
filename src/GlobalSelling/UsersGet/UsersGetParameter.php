@@ -1,12 +1,12 @@
 <?php
 namespace MercadoLibre\GlobalSelling\UsersGet;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String user_id
  */
-class UsersGetParameter extends GlobalSellingParameter
+class UsersGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

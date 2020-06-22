@@ -2,13 +2,13 @@
 
 namespace MercadoLibre\NativeSelling\UsersApplicationsDelete;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String seller_id
  * @property String app_id
  */
-class UsersApplicationsDeleteParameter extends NativeSellingParameter
+class UsersApplicationsDeleteParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

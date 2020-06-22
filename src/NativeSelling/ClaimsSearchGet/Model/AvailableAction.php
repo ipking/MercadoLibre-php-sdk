@@ -3,14 +3,14 @@
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string action
  * @property string due_date
  * @property string mandatory
  */
-class AvailableAction extends NativeSellingParameter
+class AvailableAction extends BaseParameter
 {
 	public function __construct($data = [])
 	{

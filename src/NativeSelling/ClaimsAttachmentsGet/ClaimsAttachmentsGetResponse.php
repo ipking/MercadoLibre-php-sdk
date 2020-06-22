@@ -3,8 +3,8 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsAttachmentsGet;
 
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\Base\BaseErrorMsg;
+use MercadoLibre\Base\BaseResponse;
 
 /**
  * @property string filename
@@ -14,9 +14,9 @@ use MercadoLibre\NativeSelling\NativeSellingResponse;
  * @property string type
  * @property string file_url
  */
-class ClaimsAttachmentsGetResponse extends NativeSellingResponse{
+class ClaimsAttachmentsGetResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'filename'          => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],

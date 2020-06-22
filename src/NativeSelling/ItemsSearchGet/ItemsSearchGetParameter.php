@@ -5,14 +5,14 @@
 
 namespace MercadoLibre\NativeSelling\ItemsSearchGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String $seller_id
  * @property String offset
  * @property String limit
  */
-class ItemsSearchGetParameter extends NativeSellingParameter
+class ItemsSearchGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -10,8 +10,8 @@ use MercadoLibre\NativeSelling\ItemsPOst\Model\ConditionEnum;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\Picture;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\SaleTerm;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\Variation;
-use MercadoLibre\NativeSelling\Model\CurrencyEnum;
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\Model\CurrencyEnum;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String condition
@@ -31,7 +31,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property Attribute[] attributes
  * @property Variation[] variations
  */
-class ItemsPostParameter extends NativeSellingParameter
+class ItemsPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,7 +3,7 @@
 namespace MercadoLibre\GlobalSelling\ItemsGet\Model;
 
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -31,7 +31,7 @@ use MercadoLibre\GlobalSelling\GlobalSellingParameter;
  * @property string owner_id
  * @property string cbt_item_id
  */
-class ItemInfo extends GlobalSellingParameter
+class ItemInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{

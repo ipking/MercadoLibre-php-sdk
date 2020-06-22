@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\OrdersSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -18,7 +18,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string country
  * @property string city
  */
-class ReceiverAddress extends NativeSellingParameter
+class ReceiverAddress extends BaseParameter
 {
 	public function __construct($data = [])
 	{

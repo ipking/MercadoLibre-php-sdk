@@ -5,9 +5,9 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPut;
 use MercadoLibre\Core\Response;
-use MercadoLibre\GlobalSelling\GlobalSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ItemsPutClient extends GlobalSellingClient {
+class ItemsPutClient extends BaseClient {
 	
 	protected $method = self::METHOD_PUT;
 	

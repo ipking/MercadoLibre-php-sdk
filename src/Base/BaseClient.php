@@ -3,11 +3,11 @@
  * 请求客户端
  */
 
-namespace MercadoLibre\GlobalSelling;
+namespace MercadoLibre\Base;
 use MercadoLibre\Core\Client;
 use MercadoLibre\Core\Parameter;
 
-class GlobalSellingClient extends Client{
+class BaseClient extends Client{
 	
 	/**
 	 * 正式环境

@@ -4,17 +4,17 @@
  */
 
 namespace MercadoLibre\NativeSelling\ItemsSearchGet;
-use MercadoLibre\NativeSelling\Model\Paging;
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\Base\Model\Paging;
+use MercadoLibre\Base\BaseErrorMsg;
+use MercadoLibre\Base\BaseResponse;
 
 /**
  * @property array item_ids
  * @property Paging paging
  */
-class ItemsSearchGetResponse extends NativeSellingResponse{
+class ItemsSearchGetResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 			'item_ids' => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL, self::PARAM_TYPE_STRING],

@@ -3,14 +3,14 @@
 namespace MercadoLibre\NativeSelling\PicturesGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string size
  * @property string url
  * @property string secure_url
  */
-class Variation extends NativeSellingParameter
+class Variation extends BaseParameter
 {
 	public function __construct($data = [])
 	{

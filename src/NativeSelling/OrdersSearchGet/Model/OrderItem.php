@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\OrdersSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string currency_id
@@ -12,7 +12,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string unit_price
  * @property Item item
  */
-class OrderItem extends NativeSellingParameter
+class OrderItem extends BaseParameter
 {
 	public function __construct($data = [])
 	{

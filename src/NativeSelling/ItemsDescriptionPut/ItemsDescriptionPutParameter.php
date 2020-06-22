@@ -5,13 +5,13 @@
 
 namespace MercadoLibre\NativeSelling\ItemsDescriptionPut;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String item_id
  * @property String plain_text
  */
-class ItemsDescriptionPutParameter extends NativeSellingParameter
+class ItemsDescriptionPutParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

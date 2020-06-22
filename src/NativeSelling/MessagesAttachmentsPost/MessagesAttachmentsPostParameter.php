@@ -3,12 +3,12 @@
 
 namespace MercadoLibre\NativeSelling\MessagesAttachmentsPost;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String file
  */
-class MessagesAttachmentsPostParameter extends NativeSellingParameter
+class MessagesAttachmentsPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

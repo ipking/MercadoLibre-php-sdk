@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\NativeSelling\QuestionsGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class QuestionsGetClient extends NativeSellingClient {
+class QuestionsGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

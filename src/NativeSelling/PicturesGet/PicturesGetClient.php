@@ -5,9 +5,9 @@
 
 namespace MercadoLibre\NativeSelling\PicturesGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class PicturesGetClient extends NativeSellingClient {
+class PicturesGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

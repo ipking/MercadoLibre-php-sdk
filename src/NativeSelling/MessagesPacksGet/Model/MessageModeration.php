@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\MessagesPacksGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string status
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string source
  * @property string moderation_date
  */
-class MessageModeration extends NativeSellingParameter
+class MessageModeration extends BaseParameter
 {
 	public function __construct($data = [])
 	{

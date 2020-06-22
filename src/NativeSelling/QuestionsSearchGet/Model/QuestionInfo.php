@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\QuestionsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string date_created
@@ -17,7 +17,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property Answer answer
  * @property From from
  */
-class QuestionInfo extends NativeSellingParameter
+class QuestionInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{

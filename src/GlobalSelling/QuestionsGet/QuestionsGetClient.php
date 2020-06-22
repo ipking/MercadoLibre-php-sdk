@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\GlobalSelling\QuestionsGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\GlobalSelling\GlobalSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class QuestionsGetClient extends GlobalSellingClient {
+class QuestionsGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

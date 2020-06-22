@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\NativeSelling\MessagesPacksGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class MessagesPacksGetClient extends NativeSellingClient {
+class MessagesPacksGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

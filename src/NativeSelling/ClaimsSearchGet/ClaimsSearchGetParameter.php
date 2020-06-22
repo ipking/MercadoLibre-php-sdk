@@ -3,7 +3,7 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String offset
@@ -22,7 +22,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String date_created
  * @property String last_updated
  */
-class ClaimsSearchGetParameter extends NativeSellingParameter
+class ClaimsSearchGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

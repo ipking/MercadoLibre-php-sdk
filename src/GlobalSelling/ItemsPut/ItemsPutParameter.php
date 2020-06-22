@@ -2,8 +2,8 @@
 namespace MercadoLibre\GlobalSelling\ItemsPut;
 
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
-use MercadoLibre\GlobalSelling\ItemsPut\Model\Description;
+use MercadoLibre\Base\BaseParameter;
+use MercadoLibre\GlobalSelling\ItemsPost\Model\Description;
 
 
 /**
@@ -15,7 +15,7 @@ use MercadoLibre\GlobalSelling\ItemsPut\Model\Description;
  * @property string title
  * @property Description description
  */
-class ItemsPutParameter extends GlobalSellingParameter
+class ItemsPutParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

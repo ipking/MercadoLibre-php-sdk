@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\UsersGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string state
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string address
  * @property string zip_code
  */
-class AddressParameter extends NativeSellingParameter
+class AddressParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

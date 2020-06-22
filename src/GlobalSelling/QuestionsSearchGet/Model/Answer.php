@@ -3,14 +3,14 @@
 namespace MercadoLibre\GlobalSelling\QuestionsSearchGet\Model;
 
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string date_created
  * @property string status
  * @property string text
  */
-class Answer extends GlobalSellingParameter
+class Answer extends BaseParameter
 {
 	public function __construct($data = [])
 	{

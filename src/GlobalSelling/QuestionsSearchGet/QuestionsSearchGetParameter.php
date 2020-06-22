@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\GlobalSelling\QuestionsSearchGet;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String seller_id
@@ -10,7 +10,7 @@ use MercadoLibre\GlobalSelling\GlobalSellingParameter;
  * @property String limit
  * @property String status
  */
-class QuestionsSearchGetParameter extends GlobalSellingParameter
+class QuestionsSearchGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

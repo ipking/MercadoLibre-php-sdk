@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsMessagesGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string sender_role
@@ -13,7 +13,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string message
  * @property Attachment[] attachments
  */
-class MessageInfo extends NativeSellingParameter
+class MessageInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{

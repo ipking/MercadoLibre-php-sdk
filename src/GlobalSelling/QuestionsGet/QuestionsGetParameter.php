@@ -3,12 +3,12 @@
 
 namespace MercadoLibre\GlobalSelling\QuestionsGet;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String question_id
  */
-class QuestionsGetParameter extends GlobalSellingParameter
+class QuestionsGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

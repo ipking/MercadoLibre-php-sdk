@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\OrdersSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -20,7 +20,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property Buyer buyer
  * @property array tags
  */
-class OrderInfo extends NativeSellingParameter
+class OrderInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{

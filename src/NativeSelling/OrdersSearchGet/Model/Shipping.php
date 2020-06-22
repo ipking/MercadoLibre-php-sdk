@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\OrdersSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string substatus
@@ -20,7 +20,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string date_first_printed
  * @property ReceiverAddress receiver_address
  */
-class Shipping extends NativeSellingParameter
+class Shipping extends BaseParameter
 {
 	public function __construct($data = [])
 	{

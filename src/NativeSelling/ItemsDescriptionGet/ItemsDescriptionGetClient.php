@@ -5,9 +5,9 @@
 
 namespace MercadoLibre\NativeSelling\ItemsDescriptionGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ItemsDescriptionGetClient extends NativeSellingClient {
+class ItemsDescriptionGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

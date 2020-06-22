@@ -1,6 +1,6 @@
 <?php
 
-namespace MercadoLibre\NativeSelling\Model;
+namespace MercadoLibre\Base\Model;
 
 class CurrencyEnum{
 	const CURRENCY_ARS = 'ARS';

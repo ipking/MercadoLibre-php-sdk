@@ -3,10 +3,10 @@
  * 请求参数
  */
 
-namespace MercadoLibre\GlobalSelling;
+namespace MercadoLibre\Base;
 use MercadoLibre\Core\Parameter;
 
-class GlobalSellingParameter extends Parameter {
+class BaseParameter extends Parameter {
 	public function __construct($data, $defines = []) {
 		parent::__construct($data, $defines);
 	}

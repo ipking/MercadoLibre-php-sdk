@@ -2,14 +2,14 @@
 
 namespace MercadoLibre\GlobalSelling\UsersGet\Model;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string user_id
  * @property string site_id
  * @property string logistic_type
  */
-class Marketplace extends GlobalSellingParameter
+class Marketplace extends BaseParameter
 {
 	public function __construct($data = [])
 	{

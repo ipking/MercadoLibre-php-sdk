@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsMessagesGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string filename
@@ -12,7 +12,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string type
  * @property string date_created
  */
-class Attachment extends NativeSellingParameter
+class Attachment extends BaseParameter
 {
 	public function __construct($data = [])
 	{

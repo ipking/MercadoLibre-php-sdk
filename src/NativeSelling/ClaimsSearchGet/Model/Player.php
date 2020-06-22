@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string role
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string user_id
  * @property AvailableAction[] available_actions
  */
-class Player extends NativeSellingParameter
+class Player extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsEvidencesGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string date_shipped
@@ -19,7 +19,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property Attachment[] attachments
  * @property string handling_date
  */
-class Evidence extends NativeSellingParameter
+class Evidence extends BaseParameter
 {
 	
 	public function __construct($data = [])

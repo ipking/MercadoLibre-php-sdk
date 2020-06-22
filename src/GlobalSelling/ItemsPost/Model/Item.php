@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string item_id
@@ -11,7 +11,7 @@ use MercadoLibre\GlobalSelling\GlobalSellingParameter;
  * @property string site_id
  * @property Error[] errors
  */
-class Item extends GlobalSellingParameter
+class Item extends BaseParameter
 {
 	public function __construct($data = [])
 	{

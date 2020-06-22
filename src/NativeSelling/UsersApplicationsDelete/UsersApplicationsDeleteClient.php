@@ -2,9 +2,9 @@
 
 namespace MercadoLibre\NativeSelling\UsersApplicationsDelete;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class UsersApplicationsDeleteClient extends NativeSellingClient {
+class UsersApplicationsDeleteClient extends BaseClient {
 	
 	protected $method = self::METHOD_DELETE;
 	

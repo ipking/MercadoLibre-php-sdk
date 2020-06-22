@@ -3,14 +3,14 @@
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string role
  * @property string amount
  * @property string date_created
  */
-class Cost extends NativeSellingParameter
+class Cost extends BaseParameter
 {
 	public function __construct($data = [])
 	{

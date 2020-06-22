@@ -2,7 +2,7 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string site_id
@@ -12,7 +12,7 @@ use MercadoLibre\GlobalSelling\GlobalSellingParameter;
  * @property string title
  * @property Description description
  */
-class Config extends GlobalSellingParameter
+class Config extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -8,7 +8,7 @@ namespace MercadoLibre\NativeSelling\Auth;
 
 use MercadoLibre\Core\Client;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\Model\SiteEnum;
+use MercadoLibre\Base\Model\SiteEnum;
 
 class AuthClient extends Client{
 	

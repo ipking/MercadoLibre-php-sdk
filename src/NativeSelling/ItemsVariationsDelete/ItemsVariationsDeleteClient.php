@@ -5,9 +5,9 @@
 
 namespace MercadoLibre\NativeSelling\ItemsVariationsDelete;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ItemsVariationsDeleteClient extends NativeSellingClient {
+class ItemsVariationsDeleteClient extends BaseClient {
 	
 	protected $method = self::METHOD_DELETE;
 	

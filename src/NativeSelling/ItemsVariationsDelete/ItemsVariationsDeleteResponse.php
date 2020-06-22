@@ -5,16 +5,16 @@
 
 namespace MercadoLibre\NativeSelling\ItemsVariationsDelete;
 
-use MercadoLibre\NativeSelling\NativeSellingErrorMsg;
-use MercadoLibre\NativeSelling\NativeSellingResponse;
+use MercadoLibre\Base\BaseErrorMsg;
+use MercadoLibre\Base\BaseResponse;
 
 /**
  * @property string text
  * @property string plain_text
  */
-class ItemsVariationsDeleteResponse extends NativeSellingResponse{
+class ItemsVariationsDeleteResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
-		$msg = NativeSellingErrorMsg::getMsg($errors);
+		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;
 		parent::__construct($result,$errors, $message, $data, array(
 		));

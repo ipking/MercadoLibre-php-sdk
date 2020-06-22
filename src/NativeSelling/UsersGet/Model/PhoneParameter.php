@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\UsersGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string area_code
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string extension
  * @property string verified
  */
-class PhoneParameter extends NativeSellingParameter
+class PhoneParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

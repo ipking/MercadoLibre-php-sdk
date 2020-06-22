@@ -5,9 +5,9 @@ namespace MercadoLibre\NativeSelling\MessagesAttachmentsGet;
 
 
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class MessagesAttachmentsGetClient extends NativeSellingClient {
+class MessagesAttachmentsGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	

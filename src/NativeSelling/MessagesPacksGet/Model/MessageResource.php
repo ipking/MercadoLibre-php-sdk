@@ -3,13 +3,13 @@
 namespace MercadoLibre\NativeSelling\MessagesPacksGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
  * @property string name
  */
-class MessageResource extends NativeSellingParameter
+class MessageResource extends BaseParameter
 {
 	
 	const NAME_PACKS = 'packs';

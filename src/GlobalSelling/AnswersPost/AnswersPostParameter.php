@@ -3,14 +3,14 @@
 
 namespace MercadoLibre\GlobalSelling\AnswersPost;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String question_id
  * @property String text
  * @property String text_translated
  */
-class AnswersPostParameter extends GlobalSellingParameter
+class AnswersPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

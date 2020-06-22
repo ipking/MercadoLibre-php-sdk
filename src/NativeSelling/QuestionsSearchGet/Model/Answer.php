@@ -3,14 +3,14 @@
 namespace MercadoLibre\NativeSelling\QuestionsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string date_created
  * @property string status
  * @property string text
  */
-class Answer extends NativeSellingParameter
+class Answer extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ItemsGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -15,7 +15,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string seller_custom_field
  * @property string sold_quantity
  */
-class Variation extends NativeSellingParameter
+class Variation extends BaseParameter
 {
 	public function __construct($data = [])
 	{

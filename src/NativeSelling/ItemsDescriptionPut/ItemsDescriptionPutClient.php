@@ -5,9 +5,9 @@
 
 namespace MercadoLibre\NativeSelling\ItemsDescriptionPut;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ItemsDescriptionPutClient extends NativeSellingClient {
+class ItemsDescriptionPutClient extends BaseClient {
 	
 	protected $method = self::METHOD_PUT;
 	

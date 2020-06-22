@@ -3,12 +3,12 @@
 
 namespace MercadoLibre\NativeSelling\MessagesGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String message_id
  */
-class MessagesGetParameter extends NativeSellingParameter
+class MessagesGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

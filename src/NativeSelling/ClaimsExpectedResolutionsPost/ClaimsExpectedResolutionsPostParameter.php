@@ -3,13 +3,13 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsExpectedResolutionsPost;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String claim_id
  * @property String expected_resolution
  */
-class ClaimsExpectedResolutionsPostParameter extends NativeSellingParameter
+class ClaimsExpectedResolutionsPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -13,7 +13,7 @@ $NAME_MAP = '$NAME_MAP';
 $data = <<<EOL
 <?php
 
-namespace MercadoLibre\NativeSelling\Model;
+namespace MercadoLibre\Base\Model;
 
 class CurrencyEnum{
 $const

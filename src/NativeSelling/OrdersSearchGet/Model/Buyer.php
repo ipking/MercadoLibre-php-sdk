@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\OrdersSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -14,7 +14,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property Phone phone
  * @property Phone alternative_phone
  */
-class Buyer extends NativeSellingParameter
+class Buyer extends BaseParameter
 {
 	public function __construct($data = [])
 	{

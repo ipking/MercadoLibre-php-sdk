@@ -5,7 +5,7 @@ namespace MercadoLibre\NativeSelling\MessagesPost;
 
 use MercadoLibre\NativeSelling\MessagesPost\Model\From;
 use MercadoLibre\NativeSelling\MessagesPost\Model\To;
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String pack_id
@@ -15,7 +15,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String text
  * @property array attachments
  */
-class MessagesPostParameter extends NativeSellingParameter
+class MessagesPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

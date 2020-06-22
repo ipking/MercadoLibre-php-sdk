@@ -5,12 +5,12 @@
 
 namespace MercadoLibre\NativeSelling\PicturesGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String picture_id
  */
-class PicturesGetParameter extends NativeSellingParameter
+class PicturesGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

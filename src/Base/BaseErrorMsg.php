@@ -2,10 +2,10 @@
 /**
  * 获取错误信息  统一处理错误信息
  */
-namespace MercadoLibre\GlobalSelling;
+namespace MercadoLibre\Base;
 
 
-class GlobalSellingErrorMsg {
+class BaseErrorMsg {
 	
 	public static function getMsg($errors){
 		if(!$errors){

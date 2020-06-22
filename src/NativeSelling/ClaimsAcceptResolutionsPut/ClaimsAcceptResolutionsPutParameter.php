@@ -3,12 +3,12 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsAcceptResolutionsPut;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String claim_id
  */
-class ClaimsAcceptResolutionsPutParameter extends NativeSellingParameter
+class ClaimsAcceptResolutionsPutParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,12 +3,12 @@
 namespace MercadoLibre\NativeSelling\ItemsPost\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string source 图片地址
  */
-class Picture extends NativeSellingParameter
+class Picture extends BaseParameter
 {
 	public function __construct($data = [])
 	{

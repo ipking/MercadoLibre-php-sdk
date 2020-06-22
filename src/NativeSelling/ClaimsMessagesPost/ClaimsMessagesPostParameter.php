@@ -3,7 +3,7 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsMessagesPost;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String claim_id
@@ -11,7 +11,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String message
  * @property array attachments
  */
-class ClaimsMessagesPostParameter extends NativeSellingParameter
+class ClaimsMessagesPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,12 +3,12 @@
 
 namespace MercadoLibre\NativeSelling\QuestionsGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String question_id
  */
-class QuestionsGetParameter extends NativeSellingParameter
+class QuestionsGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

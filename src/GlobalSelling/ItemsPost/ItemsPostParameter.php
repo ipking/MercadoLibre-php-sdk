@@ -2,13 +2,13 @@
 namespace MercadoLibre\GlobalSelling\ItemsPost;
 
 use MercadoLibre\GlobalSelling\ItemsPost\Model\Config;
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string item_id
  * @property Config[] config
  */
-class ItemsPostParameter extends GlobalSellingParameter
+class ItemsPostParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

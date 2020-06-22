@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\GlobalSelling\AnswersPost;
 use MercadoLibre\Core\Response;
-use MercadoLibre\GlobalSelling\GlobalSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class AnswersPostClient extends GlobalSellingClient {
+class AnswersPostClient extends BaseClient {
 	
 	protected $method = self::METHOD_POST;
 	

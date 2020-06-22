@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\MessagesPacksGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string filename
@@ -13,7 +13,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string potential_security_threat
  * @property string creation_date
  */
-class MessageAttachment extends NativeSellingParameter
+class MessageAttachment extends BaseParameter
 {
 	public function __construct($data = [])
 	{

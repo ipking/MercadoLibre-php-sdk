@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\NativeSelling\MessagesGet;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class MessagesGetClient extends NativeSellingClient {
+class MessagesGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	protected $curl_option = array(

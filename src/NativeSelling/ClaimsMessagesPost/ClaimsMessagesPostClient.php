@@ -3,9 +3,9 @@
 
 namespace MercadoLibre\NativeSelling\ClaimsMessagesPost;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class ClaimsMessagesPostClient extends NativeSellingClient {
+class ClaimsMessagesPostClient extends BaseClient {
 	
 	protected $method = self::METHOD_POST;
 	

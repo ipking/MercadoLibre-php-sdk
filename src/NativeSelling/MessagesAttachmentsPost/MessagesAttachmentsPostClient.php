@@ -5,9 +5,9 @@ namespace MercadoLibre\NativeSelling\MessagesAttachmentsPost;
 
 use finfo;
 use MercadoLibre\Core\Response;
-use MercadoLibre\NativeSelling\NativeSellingClient;
+use MercadoLibre\Base\BaseClient;
 
-class MessagesAttachmentsPostClient extends NativeSellingClient {
+class MessagesAttachmentsPostClient extends BaseClient {
 	
 	protected $method = self::METHOD_POST_FILE;
 	protected $curl_option = array(

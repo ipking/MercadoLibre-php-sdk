@@ -2,12 +2,12 @@
 
 namespace MercadoLibre\GlobalSelling\ItemsPost\Model;
 
-use MercadoLibre\GlobalSelling\GlobalSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string plain_text
  */
-class Description extends GlobalSellingParameter
+class Description extends BaseParameter
 {
 	public function __construct($data = [])
 	{

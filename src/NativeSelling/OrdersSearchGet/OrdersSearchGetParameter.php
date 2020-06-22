@@ -5,7 +5,7 @@
 
 namespace MercadoLibre\NativeSelling\OrdersSearchGet;
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property String seller_id
@@ -16,7 +16,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property String order_date_last_updated_from
  * @property String order_date_last_updated_to
  */
-class OrdersSearchGetParameter extends NativeSellingParameter
+class OrdersSearchGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

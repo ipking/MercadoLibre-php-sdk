@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string name
@@ -12,7 +12,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string admin_id
  * @property string date_created
  */
-class Label extends NativeSellingParameter
+class Label extends BaseParameter
 {
 	public function __construct($data = [])
 	{

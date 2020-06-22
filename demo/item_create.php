@@ -4,8 +4,8 @@ use MercadoLibre\NativeSelling\ItemsPost\Model\Attribute;
 use MercadoLibre\NativeSelling\ItemsPost\Model\ConditionEnum;
 use MercadoLibre\NativeSelling\ItemsPost\Model\Picture;
 use MercadoLibre\NativeSelling\ItemsPost\Model\Variation;
-use MercadoLibre\NativeSelling\Model\CurrencyEnum;
-use MercadoLibre\NativeSelling\Model\ListingTypesEnum;
+use MercadoLibre\Base\Model\CurrencyEnum;
+use MercadoLibre\Base\Model\ListingTypesEnum;
 
 include 'config.php';
 

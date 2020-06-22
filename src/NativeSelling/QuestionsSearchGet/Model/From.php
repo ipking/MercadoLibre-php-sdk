@@ -3,13 +3,13 @@
 namespace MercadoLibre\NativeSelling\QuestionsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string answered_questions
  * @property string id
  */
-class From extends NativeSellingParameter
+class From extends BaseParameter
 {
 	public function __construct($data = [])
 	{

@@ -3,7 +3,7 @@
 namespace MercadoLibre\NativeSelling\ClaimsSearchGet\Model;
 
 
-use MercadoLibre\NativeSelling\NativeSellingParameter;
+use MercadoLibre\Base\BaseParameter;
 
 /**
  * @property string id
@@ -23,7 +23,7 @@ use MercadoLibre\NativeSelling\NativeSellingParameter;
  * @property string date_created
  * @property string last_updated
  */
-class ClaimInfo extends NativeSellingParameter
+class ClaimInfo extends BaseParameter
 {
 	/**
 	complainant: person who starts the claim.
