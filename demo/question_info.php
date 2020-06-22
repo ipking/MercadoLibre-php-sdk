@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\QuestionInfo\QuestionInfoParameter();
+$param = new \MercadoLibre\NativeSelling\QuestionsGet\QuestionsGetParameter();
 $param->question_id = '';
 
-$client = new \MercadoLibre\NativeSelling\QuestionInfo\QuestionInfoClient($param);
+$client = new \MercadoLibre\NativeSelling\QuestionsGet\QuestionsGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

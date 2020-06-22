@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ClaimInfo\ClaimInfoParameter();
+$param = new \MercadoLibre\NativeSelling\ClaimsGet\ClaimsGetParameter();
 $param->claim_id = '';
 
-$client = new \MercadoLibre\NativeSelling\ClaimInfo\ClaimInfoClient($param);
+$client = new \MercadoLibre\NativeSelling\ClaimsGet\ClaimsGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

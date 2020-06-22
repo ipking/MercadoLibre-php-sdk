@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\Pictures\PicturesParameter();
+$param = new \MercadoLibre\NativeSelling\PicturesGet\PicturesGetParameter();
 $param->picture_id = '';
 
-$client = new \MercadoLibre\NativeSelling\Pictures\PicturesClient($param);
+$client = new \MercadoLibre\NativeSelling\PicturesGet\PicturesGetClient($param);
 //$client->setAccessToken($access_token); //可以不用token
 $rsp = $client->send();
 

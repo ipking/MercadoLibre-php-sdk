@@ -6,10 +6,9 @@ use MercadoLibre\GlobalSelling\ItemsPost\ItemsPostParameter;
 include 'config.php';
 
 $param = new ItemsPostParameter();
-$param->item_id = 'CBT9';
+$param->item_id = 'CBT';
 
 $sites = [
-	'MLM',
 	'MLB',
 ];
 
@@ -18,6 +17,7 @@ foreach($sites as $site){
     $config = new \MercadoLibre\GlobalSelling\ItemsPost\Model\Config();
     $config->site_id = $site;
     $config->logistic_type = 'remote';
+    $config->price = 38;
     $configs[] = $config;
 }
 $param->config = $configs;

@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ItemUpdateDescription\ItemUpdateDescriptionParameter();
+$param = new \MercadoLibre\NativeSelling\ItemsDescriptionPut\ItemsDescriptionPutParameter();
 $param->item_id = '';
 $param->plain_text = 'test11224';
 
-$client = new \MercadoLibre\NativeSelling\ItemUpdateDescription\ItemUpdateDescriptionClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsDescriptionPut\ItemsDescriptionPutClient($param);
 $client->setAccessToken($access_token);
 
 $rsp = $client->send();

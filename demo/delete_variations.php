@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\DeleteVariations\DeleteVariationsParameter();
+$param = new \MercadoLibre\NativeSelling\ItemsVariationsDelete\ItemsVariationsDeleteParameter();
 $param->item_id = '';
 $param->variations_id = '';
 
-$client = new \MercadoLibre\NativeSelling\DeleteVariations\DeleteVariationsClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsVariationsDelete\ItemsVariationsDeleteClient($param);
 $client->setAccessToken($access_token);
 
 

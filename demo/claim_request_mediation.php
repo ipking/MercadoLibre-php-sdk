@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ClaimRequestMediation\ClaimRequestMediationParameter();
+$param = new \MercadoLibre\NativeSelling\ClaimsPut\ClaimsPutParameter();
 $param->claim_id = '';
 
-$client = new \MercadoLibre\NativeSelling\ClaimRequestMediation\ClaimRequestMediationClient($param);
+$client = new \MercadoLibre\NativeSelling\ClaimsPut\ClaimsPutClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

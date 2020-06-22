@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ItemInfo\ItemInfoParameter();
-$param->item_id = '';
+$param = new \MercadoLibre\NativeSelling\ItemsGet\ItemsGetParameter();
+$param->item_id = 'MLM787615205';
 
-$client = new \MercadoLibre\NativeSelling\ItemInfo\ItemInfoClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsGet\ItemsGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

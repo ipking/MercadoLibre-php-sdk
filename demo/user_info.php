@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\UserInfo\UserInfoParameter();
+$param = new \MercadoLibre\NativeSelling\UsersGet\UsersGetParameter();
 $param->seller_id = $user_id;
 
-$client = new \MercadoLibre\NativeSelling\UserInfo\UserInfoClient($param);
+$client = new \MercadoLibre\NativeSelling\UsersGet\UsersGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

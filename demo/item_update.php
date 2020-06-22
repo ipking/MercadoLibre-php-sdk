@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ItemUpdate\ItemUpdateParameter();
-$param->item_id = '';
+$param = new \MercadoLibre\NativeSelling\ItemsPut\ItemsPutParameter();
+$param->item_id = 'CBT939366770';
 
-$client = new \MercadoLibre\NativeSelling\ItemUpdate\ItemUpdateClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsPut\ItemsPutClient($param);
 $client->setAccessToken($access_token);
 
 //设置免费送货

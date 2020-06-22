@@ -1,16 +1,16 @@
 <?php
 
-use MercadoLibre\NativeSelling\ItemCreate\Model\Attribute;
-use MercadoLibre\NativeSelling\ItemCreate\Model\ConditionEnum;
-use MercadoLibre\NativeSelling\ItemCreate\Model\Picture;
-use MercadoLibre\NativeSelling\ItemCreate\Model\Variation;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Attribute;
+use MercadoLibre\NativeSelling\ItemsPost\Model\ConditionEnum;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Picture;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Variation;
 use MercadoLibre\NativeSelling\Model\CurrencyEnum;
 use MercadoLibre\NativeSelling\Model\ListingTypesEnum;
 
 include 'config.php';
 
 
-$param = new \MercadoLibre\NativeSelling\ItemCreate\ItemCreateParameter();
+$param = new \MercadoLibre\NativeSelling\ItemsPost\ItemsPostParameter();
 $param->condition = ConditionEnum::CONDITION_NEW;
 $param->currency_id = CurrencyEnum::CURRENCY_USD;
 $param->accepts_mercadopago = true;
@@ -84,12 +84,12 @@ $param->variations = [$variations];
 
 $param->warranty = '';
 
-$sale_term = new \MercadoLibre\NativeSelling\ItemCreate\Model\SaleTerm();
+$sale_term = new \MercadoLibre\NativeSelling\ItemsPost\Model\SaleTerm();
 $sale_term->id = 'WARRANTY_TYPE';
 $sale_term->value_name = 'No warranty';
 $param->sale_terms = [$sale_term];
 
-$client = new \MercadoLibre\NativeSelling\ItemCreate\ItemCreateClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsPost\ItemsPostClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

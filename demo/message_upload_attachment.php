@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\MessageUploadAttachment\MessageUploadAttachmentParameter();
+$param = new \MercadoLibre\NativeSelling\MessagesAttachmentsPost\MessagesAttachmentsPostParameter();
 $param->file = "H:/1.jpg";
 
-$client = new \MercadoLibre\NativeSelling\MessageUploadAttachment\MessageUploadAttachmentClient($param);
+$client = new \MercadoLibre\NativeSelling\MessagesAttachmentsPost\MessagesAttachmentsPostClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\Variations\VariationsParameter();
+$param = new \MercadoLibre\NativeSelling\ItemsVariationsGet\ItemsVariationsGetParameter();
 $param->item_id = '';
 $param->variation_id = '';
 
-$client = new \MercadoLibre\NativeSelling\Variations\VariationsClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsVariationsGet\itemsVariationsGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ClaimMessageCreate\ClaimMessageCreateParameter();
+$param = new \MercadoLibre\NativeSelling\ClaimsMessagesPost\ClaimsMessagesPostParameter();
 $param->claim_id = "1212";
 $param->receiver_role = "complainant";
 $param->message = "3q";
@@ -11,7 +11,7 @@ $param->attachments = [
 ];
 
 
-$client = new \MercadoLibre\NativeSelling\ClaimMessageCreate\ClaimMessageCreateClient($param);
+$client = new \MercadoLibre\NativeSelling\ClaimsMessagesPost\ClaimsMessagesPostClient($param);
 $client->setAccessToken($access_token);
 
 $rsp = $client->send();

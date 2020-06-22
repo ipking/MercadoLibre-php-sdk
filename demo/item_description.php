@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ItemDescription\ItemDescriptionParameter();
+$param = new \MercadoLibre\NativeSelling\ItemsDescriptionGet\ItemsDescriptionGetParameter();
 $param->item_id = '';
 
-$client = new \MercadoLibre\NativeSelling\ItemDescription\ItemDescriptionClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsDescriptionGet\ItemsDescriptionGetClient($param);
 //$client->setAccessToken($access_token); //可以不用token
 $rsp = $client->send();
 

@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ClaimAcceptResolution\ClaimAcceptResolutionParameter();
+$param = new \MercadoLibre\NativeSelling\ClaimsAcceptResolutionsPut\ClaimsAcceptResolutionsPutParameter();
 $param->claim_id = '';
 
-$client = new \MercadoLibre\NativeSelling\ClaimAcceptResolution\ClaimAcceptResolutionClient($param);
+$client = new \MercadoLibre\NativeSelling\ClaimsAcceptResolutionsPut\ClaimsAcceptResolutionsPutClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

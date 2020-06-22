@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ClaimLoadResolution\ClaimLoadResolutionParameter();
+$param = new \MercadoLibre\NativeSelling\ClaimsExpectedResolutionsPost\ClaimsExpectedResolutionsPostParameter();
 $param->claim_id = '';
 $param->expected_resolution = 'return_product';
 
-$client = new \MercadoLibre\NativeSelling\ClaimLoadResolution\ClaimLoadResolutionClient($param);
+$client = new \MercadoLibre\NativeSelling\ClaimsExpectedResolutionsPost\ClaimsExpectedResolutionsPostClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

@@ -2,12 +2,12 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\MessageInfo\MessageInfoParameter();
+$param = new \MercadoLibre\NativeSelling\MessagesGet\MessagesGetParameter();
 $param->message_id = '';
 
 
 
-$client = new \MercadoLibre\NativeSelling\MessageInfo\MessageInfoClient($param);
+$client = new \MercadoLibre\NativeSelling\MessagesGet\MessagesGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

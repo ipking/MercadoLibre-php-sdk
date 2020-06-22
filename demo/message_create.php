@@ -2,13 +2,13 @@
 
 include 'config.php';
 
-$from = new \MercadoLibre\NativeSelling\MessageCreate\Model\From();
+$from = new \MercadoLibre\NativeSelling\MessagesPost\Model\From();
 $from->user_id = $user_id;
-$from->email = $user_email;
-$to = new \MercadoLibre\NativeSelling\MessageCreate\Model\To();
-$to->user_id = $buyer_id;
+$from->email = '';//$user_email
+$to = new \MercadoLibre\NativeSelling\MessagesPost\Model\To();
+$to->user_id = '';//$buyer_id
 
-$param = new \MercadoLibre\NativeSelling\MessageCreate\MessageCreateParameter();
+$param = new \MercadoLibre\NativeSelling\MessagesPost\MessagesPostParameter();
 $param->pack_id = "";
 $param->seller_id = $user_id;
 $param->from = $from;
@@ -18,7 +18,7 @@ $param->attachments = [
 	'1.png'
 ];
 
-$client = new \MercadoLibre\NativeSelling\MessageCreate\MessageCreateClient($param);
+$client = new \MercadoLibre\NativeSelling\MessagesPost\MessagesPostClient($param);
 $client->setAccessToken($access_token);
 
 

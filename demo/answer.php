@@ -2,11 +2,11 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\Answer\AnswerParameter();
+$param = new \MercadoLibre\NativeSelling\AnswersPost\AnswersPostParameter();
 $param->question_id = '';
 $param->text = 'Yes';
 
-$client = new \MercadoLibre\NativeSelling\Answer\AnswerClient($param);
+$client = new \MercadoLibre\NativeSelling\AnswersPost\AnswersPostClient($param);
 $client->setAccessToken($access_token);
 
 

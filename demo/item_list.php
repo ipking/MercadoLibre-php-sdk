@@ -2,12 +2,12 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ItemList\ItemListParameter();
+$param = new \MercadoLibre\NativeSelling\ItemsSearchGet\ItemsSearchGetParameter();
 $param->seller_id = $user_id;
 $param->offset = 0;
 $param->limit = 2;
 
-$client = new \MercadoLibre\NativeSelling\ItemList\ItemListClient($param);
+$client = new \MercadoLibre\NativeSelling\ItemsSearchGet\ItemsSearchGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

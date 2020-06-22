@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ClaimEvidenceList\ClaimEvidenceListParameter();
+$param = new \MercadoLibre\NativeSelling\ClaimsEvidencesGet\ClaimsEvidencesGetParameter();
 $param->claim_id = '';
 
-$client = new \MercadoLibre\NativeSelling\ClaimEvidenceList\ClaimEvidenceListClient($param);
+$client = new \MercadoLibre\NativeSelling\ClaimsEvidencesGet\ClaimsEvidencesGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 
