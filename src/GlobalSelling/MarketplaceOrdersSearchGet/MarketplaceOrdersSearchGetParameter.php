@@ -15,7 +15,7 @@ use MercadoLibre\Base\BaseParameter;
  * @property String date_created_from
  * @property String date_created_to
  */
-class OrdersSearchGetParameter extends BaseParameter
+class MarketplaceOrdersSearchGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

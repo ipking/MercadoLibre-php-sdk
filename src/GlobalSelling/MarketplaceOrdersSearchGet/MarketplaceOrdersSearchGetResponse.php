@@ -10,7 +10,7 @@ use MercadoLibre\GlobalSelling\MarketplaceOrdersSearchGet\Model\OrderInfo;
  * @property OrderInfo[] orders
  * @property Paging paging
  */
-class OrdersSearchGetResponse extends BaseResponse{
+class MarketplaceOrdersSearchGetResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;

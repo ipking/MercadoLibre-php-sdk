@@ -5,11 +5,11 @@ namespace MercadoLibre\GlobalSelling\MarketplaceOrdersSearchGet;
 use MercadoLibre\Core\Response;
 use MercadoLibre\Base\BaseClient;
 
-class OrdersSearchGetClient extends BaseClient {
+class MarketplaceOrdersSearchGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	
-	public function __construct(OrdersSearchGetParameter $parameter) {
+	public function __construct(MarketplaceOrdersSearchGetParameter $parameter) {
 		$param = [
 			'offset'            => $parameter->offset,
 			'limit'             => $parameter->limit,
@@ -27,7 +27,7 @@ class OrdersSearchGetClient extends BaseClient {
 	public function send() {
 		$rsp_data = parent::send();
 		$rsp_data['orders']=$rsp_data['results'];
-		return new OrdersSearchGetResponse(
+		return new MarketplaceOrdersSearchGetResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['error']?$rsp_data['message']:'success',
