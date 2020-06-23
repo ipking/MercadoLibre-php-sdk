@@ -1,0 +1,23 @@
+<?php
+
+
+namespace MercadoLibre\GlobalSelling\MarketplaceAnswersPost;
+
+use MercadoLibre\Base\BaseParameter;
+
+/**
+ * @property String question_id
+ * @property String text
+ * @property String text_translated
+ */
+class MarketplaceAnswersPostParameter extends BaseParameter
+{
+	public function __construct($data = [])
+	{
+		parent::__construct($data, array(
+			'question_id'     => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
+			'text'            => [self::PARAM_TYPE_STRING, self::PARAM_REQUIRED],
+			'text_translated' => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
+		));
+	}
+}

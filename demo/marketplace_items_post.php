@@ -1,11 +1,11 @@
 <?php
 
-use MercadoLibre\GlobalSelling\ItemsPost\ItemsPostClient;
-use MercadoLibre\GlobalSelling\ItemsPost\ItemsPostParameter;
+use MercadoLibre\GlobalSelling\MarketplaceItemsPost\MarketplaceItemsPostClient;
+use MercadoLibre\GlobalSelling\MarketplaceItemsPost\MarketplaceItemsPostParameter;
 
 include 'config.php';
 
-$param = new ItemsPostParameter();
+$param = new MarketplaceItemsPostParameter();
 $param->item_id = 'CBT';
 
 $sites = [
@@ -14,14 +14,14 @@ $sites = [
 
 $configs = [];
 foreach($sites as $site){
-    $config = new \MercadoLibre\GlobalSelling\ItemsPost\Model\Config();
+    $config = new \MercadoLibre\GlobalSelling\MarketplaceItemsPost\Model\Config();
     $config->site_id = $site;
     $config->logistic_type = 'remote';
     $config->price = 38;
     $configs[] = $config;
 }
 $param->config = $configs;
-$client = new ItemsPostClient($param);
+$client = new MarketplaceItemsPostClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

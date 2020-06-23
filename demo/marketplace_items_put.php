@@ -1,21 +1,21 @@
 <?php
 
-use MercadoLibre\GlobalSelling\ItemsPut\ItemsPutClient;
-use MercadoLibre\GlobalSelling\ItemsPut\ItemsPutParameter;
+use MercadoLibre\GlobalSelling\MarketplaceItemsPut\MarketplaceItemsPutClient;
+use MercadoLibre\GlobalSelling\MarketplaceItemsPut\MarketplaceItemsPutParameter;
 
 include 'config.php';
 
-$param = new ItemsPutParameter();
+$param = new MarketplaceItemsPutParameter();
 $param->item_id = '';
 $param->site_id = 'MLM';
 $param->logistic_type = 'remote';
 
-$description = new \MercadoLibre\GlobalSelling\ItemsPost\Model\Description();
+$description = new \MercadoLibre\GlobalSelling\MarketplaceItemsPost\Model\Description();
 $description->plain_text = 'test';
 $param->description = $description;
 
 
-$client = new ItemsPutClient($param);
+$client = new MarketplaceItemsPutClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

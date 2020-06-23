@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\GlobalSelling\QuestionsSearchGet\QuestionsSearchGetParameter();
+$param = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsSearchGet\MarketplaceQuestionsSearchGetParameter();
 $param->seller_id = $user_id;
 $param->offset = 0;
 $param->limit = 50;
@@ -13,7 +13,7 @@ closed_unanswered:The product is closed and the question has never been answered
 under_review:Both product and question are under review
  */
 
-$client = new \MercadoLibre\GlobalSelling\QuestionsSearchGet\QuestionsSearchGetClient($param);
+$client = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsSearchGet\MarketplaceQuestionsSearchGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

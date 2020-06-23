@@ -1,14 +1,14 @@
 <?php
 
-use MercadoLibre\GlobalSelling\UsersGet\UsersGetClient;
-use MercadoLibre\GlobalSelling\UsersGet\UsersGetParameter;
+use MercadoLibre\GlobalSelling\MarketplaceUsersGet\MarketplaceUsersGetClient;
+use MercadoLibre\GlobalSelling\MarketplaceUsersGet\MarketplaceUsersGetParameter;
 
 include 'config.php';
 
-$param = new UsersGetParameter();
+$param = new MarketplaceUsersGetParameter();
 $param->user_id = $user_id;
 
-$client = new UsersGetClient($param);
+$client = new MarketplaceUsersGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 

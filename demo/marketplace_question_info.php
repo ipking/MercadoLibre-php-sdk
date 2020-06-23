@@ -2,10 +2,10 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\GlobalSelling\QuestionsGet\QuestionsGetParameter();
+$param = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsGet\QuestionsGetParameter();
 $param->question_id = '12';
 
-$client = new \MercadoLibre\GlobalSelling\QuestionsGet\QuestionsGetClient($param);
+$client = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsGet\MarketplaceQuestionsGetClient($param);
 $client->setAccessToken($access_token);
 $rsp = $client->send();
 
