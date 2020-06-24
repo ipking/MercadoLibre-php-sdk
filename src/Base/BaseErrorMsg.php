@@ -13,7 +13,7 @@ class BaseErrorMsg {
 		}
 		$msg = '';
 		foreach($errors as $error){
-			$msg.= '['.$error['message'].']';
+			$msg.= is_string($error)?$error:'['.$error['message'].']';
 		}
 		return $msg;
 	}
