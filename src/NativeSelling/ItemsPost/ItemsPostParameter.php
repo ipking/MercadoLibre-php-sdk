@@ -30,6 +30,7 @@ use MercadoLibre\Base\BaseParameter;
  * @property SaleTerm[] sale_terms
  * @property Attribute[] attributes
  * @property Variation[] variations
+ * @property Shipping shipping
  */
 class ItemsPostParameter extends BaseParameter
 {
@@ -52,6 +53,7 @@ class ItemsPostParameter extends BaseParameter
 			'sale_terms'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET, SaleTerm::class],
 			'attributes'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET, Attribute::class],
 			'variations'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET, Variation::class],
+			'shipping'          => [self::PARAM_TYPE_OBJECT, self::PARAM_ISSET, Shipping::class],
 		));
 	}
 }

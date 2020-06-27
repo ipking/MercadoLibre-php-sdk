@@ -26,6 +26,6 @@ class MarketplaceItemsPostClient extends BaseClient {
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
 			$rsp_data['error']?$rsp_data['message']:'success',
-			$rsp_data);
+			['items'=>$rsp_data]);
 	}
 }
