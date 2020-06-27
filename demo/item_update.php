@@ -2,11 +2,6 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\NativeSelling\ItemsPut\ItemsPutParameter();
-$param->item_id = 'CBT939366770';
-
-$client = new \MercadoLibre\NativeSelling\ItemsPut\ItemsPutClient($param);
-$client->setAccessToken($access_token);
 
 //设置免费送货
 $put_data = [
@@ -26,7 +21,12 @@ $put_data = [
 
 
 
-$client->setPutData($put_data);
+$param = new \MercadoLibre\NativeSelling\ItemsPut\ItemsPutParameter($put_data);
+$param->item_id = '';
+
+$client = new \MercadoLibre\NativeSelling\ItemsPut\ItemsPutClient($param);
+$client->setAccessToken($access_token);
+
 $rsp = $client->send();
 
 if($rsp->isSuccess()){

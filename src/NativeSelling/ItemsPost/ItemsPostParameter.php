@@ -9,6 +9,7 @@ use MercadoLibre\NativeSelling\ItemsPOst\Model\Attribute;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\ConditionEnum;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\Picture;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\SaleTerm;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Shipping;
 use MercadoLibre\NativeSelling\ItemsPOst\Model\Variation;
 use MercadoLibre\Base\Model\CurrencyEnum;
 use MercadoLibre\Base\BaseParameter;
@@ -53,7 +54,7 @@ class ItemsPostParameter extends BaseParameter
 			'sale_terms'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET, SaleTerm::class],
 			'attributes'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET, Attribute::class],
 			'variations'          => [self::PARAM_TYPE_ARRAY, self::PARAM_ISSET, Variation::class],
-			'shipping'          => [self::PARAM_TYPE_OBJECT, self::PARAM_ISSET, Shipping::class],
+			'shipping'            => [self::PARAM_TYPE_OBJECT, self::PARAM_ISSET, Shipping::class],
 		));
 	}
 }

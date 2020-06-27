@@ -10,18 +10,18 @@ use MercadoLibre\Base\BaseClient;
 class ItemsPutClient extends BaseClient {
 	
 	protected $method = self::METHOD_PUT;
-	protected $put_data = [];
 	
 	public function __construct(ItemsPutParameter $parameter) {
 		parent::__construct('/items/'.$parameter->item_id,$parameter);
 	}
 
-	public function setPutData($put_data) {
-		$this->put_data = $put_data;
-	}
 	
 	public function send() {
-		$rsp_data = parent::sendData($this->put_data);
+		//校验数据
+		$this->param->validateAll();
+		$arr_data = $this->param->getDataAsArray($this->param->getDefines());
+		unset($arr_data['item_id']);
+		$rsp_data = parent::sendData($arr_data);
 		return new ItemsPutResponse(
 			$rsp_data['error']?Response::RESULT_FAIL:Response::RESULT_SUCCESS,
 			$rsp_data['cause'],
