@@ -31,7 +31,7 @@ use MercadoLibre\Base\BaseParameter;
  * @property string owner_id
  * @property string cbt_item_id
  */
-class ItemInfo extends BaseParameter
+class MarketplaceItemInfo extends BaseParameter
 {
 	public function __construct($data = [])
 	{
