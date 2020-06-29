@@ -11,7 +11,7 @@ use MercadoLibre\Base\BaseResponse;
 /**
  * @property Variation variation
  */
-class itemsVariationsGetResponse extends BaseResponse{
+class ItemsVariationsGetResponse extends BaseResponse{
 	public function __construct($result,$errors, $message = 'success', $data = []) {
 		$msg = BaseErrorMsg::getMsg($errors);
 		$msg and $message = $msg;

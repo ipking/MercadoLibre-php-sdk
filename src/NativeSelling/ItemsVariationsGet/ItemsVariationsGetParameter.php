@@ -11,7 +11,7 @@ use MercadoLibre\Base\BaseParameter;
  * @property String item_id
  * @property String variation_id
  */
-class itemsVariationsGetParameter extends BaseParameter
+class ItemsVariationsGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{
