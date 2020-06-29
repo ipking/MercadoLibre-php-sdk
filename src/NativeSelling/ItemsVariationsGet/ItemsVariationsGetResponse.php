@@ -3,8 +3,8 @@
  * 产品变体的响应
  */
 
-namespace MercadoLibre\NativeSelling\itemsVariationsGet;
-use MercadoLibre\NativeSelling\itemsVariationsGet\Model\Variation;
+namespace MercadoLibre\NativeSelling\ItemsVariationsGet;
+use MercadoLibre\NativeSelling\ItemsVariationsGet\Model\Variation;
 use MercadoLibre\Base\BaseErrorMsg;
 use MercadoLibre\Base\BaseResponse;
 

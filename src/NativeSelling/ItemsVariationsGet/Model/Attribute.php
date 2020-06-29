@@ -1,6 +1,6 @@
 <?php
 
-namespace MercadoLibre\NativeSelling\itemsVariationsGet\Model;
+namespace MercadoLibre\NativeSelling\ItemsVariationsGet\Model;
 
 
 use MercadoLibre\Base\BaseParameter;

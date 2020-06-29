@@ -3,7 +3,7 @@
  * 产品变体
  */
 
-namespace MercadoLibre\NativeSelling\itemsVariationsGet;
+namespace MercadoLibre\NativeSelling\ItemsVariationsGet;
 use MercadoLibre\Core\Response;
 use MercadoLibre\Base\BaseClient;
 

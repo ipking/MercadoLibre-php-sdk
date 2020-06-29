@@ -3,7 +3,7 @@
  * 产品变体的参数
  */
 
-namespace MercadoLibre\NativeSelling\itemsVariationsGet;
+namespace MercadoLibre\NativeSelling\ItemsVariationsGet;
 
 use MercadoLibre\Base\BaseParameter;
 
