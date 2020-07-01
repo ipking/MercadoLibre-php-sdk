@@ -1,7 +1,7 @@
 <?php
 
 
-namespace MercadoLibre\NativeSelling\Auth;
+namespace MercadoLibre\Base\Auth;
 use MercadoLibre\Base\BaseErrorMsg;
 use MercadoLibre\Base\BaseResponse;
 

@@ -3,7 +3,7 @@
  * 授权
  */
 
-namespace MercadoLibre\NativeSelling\Auth;
+namespace MercadoLibre\Base\Auth;
 
 
 use MercadoLibre\Core\Client;
