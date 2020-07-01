@@ -8,7 +8,7 @@ use MercadoLibre\Base\BaseParameter;
 /**
  * @property String question_id
  */
-class QuestionsGetParameter extends BaseParameter
+class MarketplaceQuestionsGetParameter extends BaseParameter
 {
 	public function __construct($data = [])
 	{

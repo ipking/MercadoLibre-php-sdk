@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-$param = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsGet\QuestionsGetParameter();
+$param = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsGet\MarketplaceQuestionsGetParameter();
 $param->question_id = '12';
 
 $client = new \MercadoLibre\GlobalSelling\MarketplaceQuestionsGet\MarketplaceQuestionsGetClient($param);

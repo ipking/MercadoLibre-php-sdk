@@ -9,7 +9,7 @@ class MarketplaceQuestionsGetClient extends BaseClient {
 	
 	protected $method = self::METHOD_GET;
 	
-	public function __construct(QuestionsGetParameter $parameter) {
+	public function __construct(MarketplaceQuestionsGetParameter $parameter) {
 		
 		parent::__construct('/marketplace/questions/'.$parameter->question_id,$parameter);
 	}
