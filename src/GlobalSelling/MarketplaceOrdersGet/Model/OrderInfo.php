@@ -21,7 +21,7 @@ use MercadoLibre\Base\BaseParameter;
  * @property string paid_amount
  * @property Coupon coupon
  * @property string expiration_date
- * @property OrderItem order_items
+ * @property OrderItem[] order_items
  * @property string currency_id
  * @property Payment payments
  * @property Shipping shipping
