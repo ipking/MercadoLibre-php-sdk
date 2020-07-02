@@ -14,6 +14,8 @@ use MercadoLibre\Base\BaseParameter;
  * @property String order_status
  * @property String date_created_from
  * @property String date_created_to
+ * @property String last_updated_from
+ * @property String last_updated_to
  */
 class MarketplaceOrdersSearchGetParameter extends BaseParameter
 {
@@ -29,6 +31,8 @@ class MarketplaceOrdersSearchGetParameter extends BaseParameter
 			'order_status'      => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
 			'date_created_from' => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
 			'date_created_to'   => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
+			'last_updated_from' => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
+			'last_updated_to'   => [self::PARAM_TYPE_STRING, self::PARAM_ISSET],
 		));
 	}
 }

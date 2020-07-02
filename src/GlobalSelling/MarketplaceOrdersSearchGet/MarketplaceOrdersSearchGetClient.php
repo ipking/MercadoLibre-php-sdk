@@ -14,12 +14,14 @@ class MarketplaceOrdersSearchGetClient extends BaseClient {
 			'offset'            => $parameter->offset,
 			'limit'             => $parameter->limit,
 			'buyer'             => $parameter->buyer_id,
-			'seller.id'         => $parameter->seller_id,
+			'seller_id'         => $parameter->seller_id,
 			'site'              => $parameter->site_id,
 			'logisitic.type'    => $parameter->logisitic_type,
 			'order.status'      => $parameter->order_status,
 			'date_created.from' => $parameter->date_created_from,
 			'date_created.to'   => $parameter->date_created_to,
+			'last_updated.from' => $parameter->last_updated_from,
+			'last_updated.to'   => $parameter->last_updated_to,
 		];
 		parent::__construct('/marketplace/orders/search?'.http_build_query($param),$parameter);
 	}
