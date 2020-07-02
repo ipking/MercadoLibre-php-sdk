@@ -18,7 +18,7 @@ use MercadoLibre\Base\BaseParameter;
  * @property MessageModeration message_moderation
  * @property MessageAttachment[] message_attachments
  * @property MessageResource[] message_resources
- * @property string conversation_first_message
+ * @property bool conversation_first_message
  */
 class MessageInfo extends BaseParameter
 {
@@ -38,7 +38,7 @@ class MessageInfo extends BaseParameter
 			'message_moderation'         => [self::PARAM_TYPE_OBJECT, self::PARAM_OPTIONAL,MessageModeration::class],
 			'message_attachments'        => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,MessageAttachment::class],
 			'message_resources'          => [self::PARAM_TYPE_ARRAY, self::PARAM_OPTIONAL,MessageResource::class],
-			'conversation_first_message' => [self::PARAM_TYPE_STRING, self::PARAM_OPTIONAL],
+			'conversation_first_message' => [self::PARAM_TYPE_BOOL, self::PARAM_OPTIONAL],
 		));
 	}
 }
