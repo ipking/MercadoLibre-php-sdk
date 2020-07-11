@@ -5,12 +5,12 @@
 
 namespace MercadoLibre\NativeSelling\ItemsPost;
 
-use MercadoLibre\NativeSelling\ItemsPOst\Model\Attribute;
-use MercadoLibre\NativeSelling\ItemsPOst\Model\ConditionEnum;
-use MercadoLibre\NativeSelling\ItemsPOst\Model\Picture;
-use MercadoLibre\NativeSelling\ItemsPOst\Model\SaleTerm;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Attribute;
+use MercadoLibre\NativeSelling\ItemsPost\Model\ConditionEnum;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Picture;
+use MercadoLibre\NativeSelling\ItemsPost\Model\SaleTerm;
 use MercadoLibre\NativeSelling\ItemsPost\Model\Shipping;
-use MercadoLibre\NativeSelling\ItemsPOst\Model\Variation;
+use MercadoLibre\NativeSelling\ItemsPost\Model\Variation;
 use MercadoLibre\Base\Model\CurrencyEnum;
 use MercadoLibre\Base\BaseParameter;
 
